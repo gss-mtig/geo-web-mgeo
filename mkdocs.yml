@@ -1,0 +1,23 @@
+site_name: Programació de geoaplicacions web
+site_url: https://gss-mtig.github.io/geo-web-mgeo/
+site_description: Programació de geoaplicacions web
+site_author: geo-web-mgeo
+theme:
+  name: 'material'
+  language: 'es'
+  highlightjs: true
+
+markdown_extensions:
+  - codehilite:
+      linenums: True
+  - admonition
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - footnotes
+repo_url: "https://github.com/gss-mtig/geo-web-mgeo"
+
+nav:
+- Home: index.md
+
+plugins:
+    - search
