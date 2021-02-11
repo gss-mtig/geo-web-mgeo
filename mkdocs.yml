@@ -18,6 +18,11 @@ repo_url: "https://github.com/gss-mtig/geo-web-mgeo"
 
 nav:
 - Home: index.md
+- Google Maps JavaScript API: google.md
+- ArcGIS API for Javascript: arcgis.md
+- OpenLayers: openLayers.md
+- Mapbox GL (mapLibre): mapbox.md
+- Leaflet: leaflet.md
 
 plugins:
     - search
