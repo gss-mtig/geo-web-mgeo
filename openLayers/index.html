@@ -1,0 +1,834 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Programació de geoaplicacions web">
+      
+      
+      
+        <meta name="author" content="geo-web-mgeo">
+      
+      
+        <link rel="canonical" href="https://gss-mtig.github.io/geo-web-mgeo/openLayers/">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.1">
+    
+    
+      
+        <title>OpenLayers - Programació de geoaplicacions web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#openlayers" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="https://gss-mtig.github.io/geo-web-mgeo/" title="Programació de geoaplicacions web" class="md-header__button md-logo" aria-label="Programació de geoaplicacions web">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació de geoaplicacions web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenLayers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/gss-mtig/geo-web-mgeo/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://gss-mtig.github.io/geo-web-mgeo/" title="Programació de geoaplicacions web" class="md-nav__button md-logo" aria-label="Programació de geoaplicacions web">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Programació de geoaplicacions web
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gss-mtig/geo-web-mgeo/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google/" class="md-nav__link">
+        Google Maps JavaScript API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arcgis/" class="md-nav__link">
+        ArcGIS API for Javascript
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OpenLayers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        OpenLayers
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mi-primer-mapa" class="md-nav__link">
+    Mi primer mapa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principales-objetos" class="md-nav__link">
+    Principales objetos
+  </a>
+  
+    <nav class="md-nav" aria-label="Principales objetos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-mapa-y-la-vista" class="md-nav__link">
+    El mapa y la vista
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controles" class="md-nav__link">
+    Controles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferentes-tipos-de-capas-y-sus-origenes" class="md-nav__link">
+    Diferentes tipos de capas y sus origenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Diferentes tipos de capas y sus origenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wms" class="md-nav__link">
+    WMS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geojson" class="md-nav__link">
+    GeoJSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proyecciones" class="md-nav__link">
+    Proyecciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Proyecciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproyeccion-raster" class="md-nav__link">
+    Reproyección Raster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproyeccion-vector" class="md-nav__link">
+    Reproyeccion Vector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox.md" class="md-nav__link">
+        Mapbox GL (mapLibre)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaflet.md" class="md-nav__link">
+        Leaflet
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mi-primer-mapa" class="md-nav__link">
+    Mi primer mapa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principales-objetos" class="md-nav__link">
+    Principales objetos
+  </a>
+  
+    <nav class="md-nav" aria-label="Principales objetos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-mapa-y-la-vista" class="md-nav__link">
+    El mapa y la vista
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controles" class="md-nav__link">
+    Controles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferentes-tipos-de-capas-y-sus-origenes" class="md-nav__link">
+    Diferentes tipos de capas y sus origenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Diferentes tipos de capas y sus origenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wms" class="md-nav__link">
+    WMS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geojson" class="md-nav__link">
+    GeoJSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proyecciones" class="md-nav__link">
+    Proyecciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Proyecciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproyeccion-raster" class="md-nav__link">
+    Reproyección Raster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproyeccion-vector" class="md-nav__link">
+    Reproyeccion Vector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/gss-mtig/geo-web-mgeo/edit/master/docs/openLayers.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="openlayers">OpenLayers</h1>
+<p><strong>OpenLayers</strong> facilita la creación de un mapas dinámicos en cualquier página web. Puede mostrar mosaicos de mapas, datos vectoriales y marcadores cargados desde cualquier fuente. OpenLayers se ha desarrollado para promover el uso de información geográfica de todo tipo. Es JavaScript de código abierto completamente gratuito, publicado bajo la licencia BSD de 2 cláusulas (también conocida como FreeBSD). <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>Es una librería JavaScript orientada a objetos. Usar la librería implica crear objetos de las clases que proporciona e interactuar con ellos. Es necesario conocer los objetos principales y acudir a los <a href="https://openlayers.org/en/latest/apidoc/">manuales de referencia</a> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<h2 id="mi-primer-mapa">Mi primer mapa</h2>
+<p>Crear un archivo llamado openlayers.html y copiar lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+      <span class="p">.</span><span class="nc">map</span> <span class="p">{</span>
+        <span class="k">height</span><span class="p">:</span> <span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo OpenLayers<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Mi primer mapa<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+      <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+        <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;map&#39;</span><span class="p">,</span>
+        <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span>
+          <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+            <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">()</span>
+          <span class="p">})</span>
+        <span class="p">],</span>
+        <span class="nx">view</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">({</span>
+          <span class="nx">center</span><span class="o">:</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">fromLonLat</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">45.1</span><span class="p">]),</span>
+          <span class="nx">zoom</span><span class="o">:</span> <span class="mf">9</span>
+        <span class="p">})</span>
+      <span class="p">});</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Resumen de pasos
+1. Incluir las librerías de OpenLayers
+2. Crear un contenedor DIV donde dibujar el mapa
+3. Declarar una variable global a la que asignar el mapa
+4. Definir una función de inicialización del mapa
+    1. Crear un mapa (objeto ol.Map)
+    2. Crear capas (objeto ol.Layer)
+    3. Añadir capas al mapa
+    4. Posicionar la vista del mapa</p>
+<h2 id="principales-objetos">Principales objetos</h2>
+<h3 id="el-mapa-y-la-vista">El mapa y la vista</h3>
+<p><strong>ol/Map</strong> es la clase principal de OpenLayers ya que define el mapa. Se representa en un contenedor de destino <em>terget</em> (por ejemplo, un elemento div en la página web que contiene el mapa). Todas las propiedades del mapa se pueden configurar en el momento de la construcción o mediante métodos de establecimiento, por Ej. setTarget(). </p>
+<p>Para crear un mapa </p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span> 
+</code></pre></div>
+<p><em>options</em> son las opciones de configuración del mapa en forma de pares de claves y valores separados por comas. Por ejemplo</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nx">view</span><span class="o">:</span> <span class="k">new</span> <span class="nx">View</span><span class="p">({</span>
+    <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">],</span>
+    <span class="nx">zoom</span><span class="o">:</span> <span class="mf">1</span>
+  <span class="p">}),</span>
+  <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">TileLayer</span><span class="p">({</span>
+      <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">OSM</span><span class="p">()</span>
+    <span class="p">})</span>
+  <span class="p">],</span>
+  <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;map&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>ol/View</strong> representa una vista simple 2D del mapa. El mapa no es responsable de cosas como el centro, el nivel de zoom y la proyección del mapa. En cambio, estas son propiedades de una instancia ol/View. </p>
+<p>Para crear una vista</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span> 
+</code></pre></div>
+<p>Donde <em>options</em> son las opciones de la vista. Las opciones principales son:</p>
+<ul>
+<li>center: coordenadas iniciales del centro de la vista </li>
+<li>zoom: nivel de zoom inicial</li>
+<li>maxZoom: máximo nivel de zoom.</li>
+<li>minZoom: mínimo nivel de zoom.</li>
+<li>projection: sistema de referencia de la proyección del mapa. Por defecto EPSG:3857</li>
+</ul>
+<h3 id="controles">Controles</h3>
+<p>Los controles son los objetos que proporcionan información del mapa y posibilitan interaccionar con el propio mapa y las capas. Todos los controles se derivan de la clase <strong>ol.Control</strong> como por ejemplo: ol.Control.Zoom, ol.Control.Rotate.</p>
+<p>Por defecto el mapa tiene los siguientes controles </p>
+<ul>
+<li>ol/control/Zoom: botones para aumentar y disminuir el zoom</li>
+<li>ol/control/Rotate: permite rotar el mapa</li>
+<li>ol/control/Attribution: muestra la propiedad attribution de las capas</li>
+</ul>
+<p>Para añadir controles al mapa se utilizan sus métodos addControl</p>
+<p>Algunos de los principales controles son:</p>
+<ul>
+<li>ol.FullScreen: Barra de niveles de escala</li>
+<li>ol.MousePosition: Coordenadas del puntero.</li>
+<li>ol.OverviewMap: Mapa guía</li>
+<li>ol.ScaleLine: Escala del mapa</li>
+<li>ol.ZoomSlider: Zoom mediante barra</li>
+<li>ol.ZoomToExtent: Zoom a una extensión</li>
+</ul>
+<h3 id="diferentes-tipos-de-capas-y-sus-origenes">Diferentes tipos de capas y sus origenes</h3>
+<p>Para obtener datos remotos para una capa, OpenLayers usa subclases <strong>ol/source/Source</strong> que especifica el origen de la información de la capa. OpenLayers tiene disponibles <em>sources</em> para servicios de mosaicos de mapas gratuitos y comerciales como OpenStreetMap o Bing, para fuentes OGC como WMS o WMTS, y para datos vectoriales en formatos como GeoJSON o KML. </p>
+<p>Las capas son los objetos que permiten añadir información geográfica al mapa, es una representación visual de datos de una fuente <em>source</em>. Todos las capas se derivan de la clase <strong>ol.Layer</strong> como por ejemplo: ol.Layer.Tile, ol.Layer.Vector, ol.Layer.VectorTile.</p>
+<p>Para añadir capas al mapa se utilizan sus métodos addLayer</p>
+<p>OpenLayers clasifica las capas según: </p>
+<ul>
+<li>Capas base y de superposición: Sólo hay una capa base visible en cada momento, mientras que de superposición puede haber todas las necesarias.</li>
+</ul>
+<p>OpenLayers tiene cuatro tipos básicos de capas:</p>
+<ul>
+<li>ol/layer/Tile: renderiza fuentes que proporcionan imágenes en mosaico en cuadrículas que están organizadas por niveles de zoom para resoluciones específicas.</li>
+<li>ol/layer/Image: renderiza fuentes que proporcionan imágenes de mapas en extensiones y resoluciones arbitrarias.</li>
+<li>ol/layer/Vector: renderiza datos vectoriales del lado del cliente.</li>
+<li>ol/layer/VectorTile: renderiza los datos que se proporcionan como mosaicos vectoriales.</li>
+</ul>
+<p>En las capas vectoriales la fuente de información no es una imagen (mapa renderizado) sino elementos geográficos (geometrías de tipo punto, línea o polígono) y es el navegador quien se encarga de dibujarlas utilizando las capacidades de dibujo vectorial (SVG, VML y canvas). En ella se gestiona una lista de <em>features</em> (<strong>ol.Feature</strong>) que se componen de:</p>
+<ul>
+<li>Geometría (<strong>ol.geom.Geometry</strong>)</li>
+<li>id: identificador</li>
+<li>Estilo de simbolización (<strong>ol.style.Style</strong>)</li>
+</ul>
+<p>Uno de los puntos fuertes de OpenLayers es que puede trabajar con muchos tipos de capas y formatos vectoriales:</p>
+<ul>
+<li>Servicios OGC WMS, WFS, WCS y WMTS</li>
+<li>Cachés: WMTS, TileCache, XYZ (tipo Google) y ArcGIS Server</li>
+<li>Formatos vectoriales: GML, KML, GeoJSON, WKT, GPX, GeoRSS, Atom...</li>
+</ul>
+<h4 id="wms">WMS</h4>
+<p>Podemos hacer peticiones a servicios WMS como una imagen simple usando <em>ImageLayer</em> como haciendo peticiones teseladas usando <em>TileLayer</em></p>
+<p>Ejemplo WMS teselado</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">inundacion500Teselada</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">TileWMS</span><span class="p">({</span>
+        <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;https://servicios.idee.es/wms-inspire/riesgos-naturales/inundaciones?&#39;</span><span class="p">,</span>
+        <span class="nx">params</span><span class="o">:</span> <span class="p">{</span><span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span> <span class="s1">&#39;NZ.Flood.FluvialT500&#39;</span><span class="p">,</span><span class="s1">&#39;FORMAT&#39;</span><span class="o">:</span> <span class="s1">&#39;image/png&#39;</span><span class="p">,</span><span class="s1">&#39;TRANSPARENT&#39;</span><span class="o">:</span> <span class="s1">&#39;true&#39;</span><span class="p">}</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">inundacion500Teselada</span><span class="p">);</span>
+</code></pre></div>
+<p>Ejemplo WMS imagen simple</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">inundacion500Simple</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
+        <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;https://servicios.idee.es/wms-inspire/riesgos-naturales/inundaciones?&#39;</span><span class="p">,</span>
+        <span class="nx">params</span><span class="o">:</span> <span class="p">{</span><span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span> <span class="s1">&#39;NZ.Flood.FluvialT500&#39;</span><span class="p">,</span><span class="s1">&#39;FORMAT&#39;</span><span class="o">:</span> <span class="s1">&#39;image/png&#39;</span><span class="p">,</span><span class="s1">&#39;TRANSPARENT&#39;</span><span class="o">:</span> <span class="s1">&#39;true&#39;</span><span class="p">}</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">inundacion500Simple</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="geojson">GeoJSON</h4>
+<p>Los tres ingredientes importantes para trabajar con datos vectoriales:</p>
+<ul>
+<li>Un formato para leer y escribir datos serializados (GeoJSON en este caso <strong>ol.format.GeoJSON</strong>)</li>
+<li>Una fuente de vector para obtener los datos y administrar un índice espacial de características. (<strong>ol.source.Vector</strong>)</li>
+<li>Una capa vectorial para representar las entidades en el mapa (<strong>ol.layer.Vector</strong>)</li>
+</ul>
+<p>Ejemplo de cargar de GeoJSON desde una URL.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">vectorSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;https://raw.githubusercontent.com/geostarters/dades/master/fulls50M.geojson&quot;</span><span class="p">,</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">()</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">vectorLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="nx">vectorSource</span><span class="p">,</span>
+    <span class="nx">style</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Style</span><span class="p">({</span>
+        <span class="nx">stroke</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Stroke</span><span class="p">({</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+        <span class="nx">lineDash</span><span class="o">:</span> <span class="p">[</span><span class="mf">4</span><span class="p">],</span>
+        <span class="nx">width</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+        <span class="p">}),</span>
+        <span class="nx">fill</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Fill</span><span class="p">({</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;rgba(0, 0, 255, 0.1)&#39;</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">}),</span>
+<span class="p">});</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">vectorLayer</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="proyecciones">Proyecciones</h3>
+<p>OpenLayers permite hacer reproyecciones tanto de capas vectoriales como de capas ráster en el navegador. Esto es una gran ventaja ya que la tranformación de capas ráster en el cliente (navegador) permite consumir servicios en SRS que inicialmente no están soportados por el proveedor del servicio. Se puede decir que esta capacidad es un punto fuerte que lo diferencia de otras librerías de mapas.</p>
+<p>La tranformación de las capas vectoriales ya es más común en otras librerías y permite consumir datos vectoriales que estan en un SRS diferente al definido en nuestro mapa.</p>
+<p>Para hacer la reproyecciones OpenLayers usa la librería de Proj4.</p>
+<h4 id="reproyeccion-raster">Reproyección Raster</h4>
+<p>OpenLayers tiene la capacidad de mostrar datos ráster de WMS, WMTS, imágenes estáticas y muchas otras fuentes en un sistema de coordenadas diferente al que se entrega desde el servidor. La transformación de las proyecciones cartográficas de la imagen se realiza directamente en un navegador web. La vista en cualquier sistema de referencia de coordenadas compatible con Proj4js es posible y ahora se pueden combinar y superponer capas previamente incompatibles. </p>
+<p>Ejemplo: <a href="https://openlayers.org/en/latest/doc/tutorials/raster-reprojection.html">https://openlayers.org/en/latest/doc/tutorials/raster-reprojection.html</a></p>
+<h4 id="reproyeccion-vector">Reproyeccion Vector</h4>
+<p>Ejemplo: <a href="http://dev.openlayers.org/examples/using-proj4js.html">http://dev.openlayers.org/examples/using-proj4js.html</a></p>
+<h2 id="ejemplos">Ejemplos</h2>
+<p>Podéis ver más ejemplos de código en <a href="https://openlayers.org/en/latest/examples/">https://openlayers.org/en/latest/examples/</a></p>
+<p>También podéis ver un worlshop con ejemplos en <a href="https://openlayers.org/workshop/en/">https://openlayers.org/workshop/en/</a></p>
+<div class="admonition question">
+<p class="admonition-title">Ejercicio  pt</p>
+<ol>
+<li>Preparar un mapa con la capa de OpenStreetMap centrada en Catalunya.</li>
+<li>Agregar al mapa el servicio WMS del ICGC de la ortofoto 25c.</li>
+<li>Añadir el control fullscreen</li>
+<li>Añadir los municipios de Catalunya en formato geojson. (<a href="https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG25831.geojson">https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG25831.geojson</a>)</li>
+<li>Agregar el control de capas (<a href="https://github.com/walkermatt/ol-layerswitcher">https://github.com/walkermatt/ol-layerswitcher</a>)</li>
+</ol>
+</div>
+<h2 id="referencias">Referencias</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://openlayers.org/">https://openlayers.org/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://openlayers.org/en/latest/apidoc/">https://openlayers.org/en/latest/apidoc/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
+      
+        <a href="../arcgis/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              ArcGIS API for Javascript
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.term.missing": "Falta"}, "search": "../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e3fea51.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,999 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Programació de geoaplicacions web">
+      
+      
+      
+        <meta name="author" content="geo-web-mgeo">
+      
+      
+        <link rel="canonical" href="https://gss-mtig.github.io/geo-web-mgeo/google/">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.1">
+    
+    
+      
+        <title>Google Maps JavaScript API - Programació de geoaplicacions web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#libreria-google-maps-javascript-api-v3" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="https://gss-mtig.github.io/geo-web-mgeo/" title="Programació de geoaplicacions web" class="md-header__button md-logo" aria-label="Programació de geoaplicacions web">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació de geoaplicacions web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google Maps JavaScript API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/gss-mtig/geo-web-mgeo/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://gss-mtig.github.io/geo-web-mgeo/" title="Programació de geoaplicacions web" class="md-nav__button md-logo" aria-label="Programació de geoaplicacions web">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Programació de geoaplicacions web
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gss-mtig/geo-web-mgeo/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Google Maps JavaScript API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Google Maps JavaScript API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mi-primer-mapa" class="md-nav__link">
+    Mi primer mapa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-de-mapa-integrados" class="md-nav__link">
+    Controles de mapa integrados
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles de mapa integrados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opciones-de-los-controles" class="md-nav__link">
+    Opciones de los controles
+  </a>
+  
+    <nav class="md-nav" aria-label="Opciones de los controles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-de-zoom" class="md-nav__link">
+    Control de zoom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-maptype" class="md-nav__link">
+    Control MapType
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-colocar-los-controles" class="md-nav__link">
+    Cómo colocar los controles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#superposiciones" class="md-nav__link">
+    Superposiciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Superposiciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marcadores" class="md-nav__link">
+    Marcadores
+  </a>
+  
+    <nav class="md-nav" aria-label="Marcadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marcadores-personalizados" class="md-nav__link">
+    Marcadores personalizados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lineas" class="md-nav__link">
+    Líneas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poligonos" class="md-nav__link">
+    Polígonos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventana-de-informacion" class="md-nav__link">
+    Ventana de información
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superposiciones-personalizadas" class="md-nav__link">
+    Superposiciones personalizadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geojson" class="md-nav__link">
+    GeoJSON
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kml" class="md-nav__link">
+    KML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#street-view" class="md-nav__link">
+    Street View
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arcgis/" class="md-nav__link">
+        ArcGIS API for Javascript
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openLayers/" class="md-nav__link">
+        OpenLayers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox.md" class="md-nav__link">
+        Mapbox GL (mapLibre)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaflet.md" class="md-nav__link">
+        Leaflet
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mi-primer-mapa" class="md-nav__link">
+    Mi primer mapa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles-de-mapa-integrados" class="md-nav__link">
+    Controles de mapa integrados
+  </a>
+  
+    <nav class="md-nav" aria-label="Controles de mapa integrados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opciones-de-los-controles" class="md-nav__link">
+    Opciones de los controles
+  </a>
+  
+    <nav class="md-nav" aria-label="Opciones de los controles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-de-zoom" class="md-nav__link">
+    Control de zoom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-maptype" class="md-nav__link">
+    Control MapType
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-colocar-los-controles" class="md-nav__link">
+    Cómo colocar los controles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#superposiciones" class="md-nav__link">
+    Superposiciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Superposiciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marcadores" class="md-nav__link">
+    Marcadores
+  </a>
+  
+    <nav class="md-nav" aria-label="Marcadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marcadores-personalizados" class="md-nav__link">
+    Marcadores personalizados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lineas" class="md-nav__link">
+    Líneas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poligonos" class="md-nav__link">
+    Polígonos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventana-de-informacion" class="md-nav__link">
+    Ventana de información
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superposiciones-personalizadas" class="md-nav__link">
+    Superposiciones personalizadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geojson" class="md-nav__link">
+    GeoJSON
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kml" class="md-nav__link">
+    KML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#street-view" class="md-nav__link">
+    Street View
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/gss-mtig/geo-web-mgeo/edit/master/docs/google.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="libreria-google-maps-javascript-api-v3">Librería Google Maps JavaScript API V3</h1>
+<p>La API de Google Maps forma parte de la Google Maps Platform lo que fácilita la integración con todos los productos disponibles de esta plataforma. </p>
+<p>Es una API que está bien documentada y cuenta con el poder de Google para su desarrollo y mantenimiento. Tiene una muy buena integración con diferentes servicios de Google como lo son el routing, places (para buscar lugares), SDK tanto para iOS como para Android, etc. Todo esto tiene un coste y más ahora que desde el 2018 cambiaron su política de precios y han aumentado mucho los precios.</p>
+<p>La referencia de la API la podemos ver en <a href="https://developers.google.com/maps/documentation/javascript/reference/?hl=es">https://developers.google.com/maps/documentation/javascript/reference/?hl=es</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Para obtener una API KEY hay que tener una cuenta de google y introducir un númeor de tarjeta de crédito (aunque no cobren nada durante el período de prueba). Dado que no vamos a introducir ningún número de tarjeta de crédito los ejemplos los veremos directamente de los ejemplos de la documentación de google.</p>
+</div>
+<p>Si tenemos uan API KEY podemos cargar la libreria en nuestro html de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://maps.googleapis.com/maps/api/js?key=[YOUR_API_KEY]&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    .....
+</code></pre></div>
+<p>Los ejemplos de la API los podemos ver en <a href="https://developers.google.com/maps/documentation/javascript/examples?hl=es">https://developers.google.com/maps/documentation/javascript/examples?hl=es</a></p>
+<h2 id="mi-primer-mapa">Mi primer mapa</h2>
+<p>Abriremos el ejemplo de Simple map <a href="https://developers.google.com/maps/documentation/javascript/examples/map-simple?hl=es">https://developers.google.com/maps/documentation/javascript/examples/map-simple?hl=es</a> y cambiaremos el Javascript por el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">map</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">initMap</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">const</span> <span class="nx">mapOptions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">center</span><span class="o">:</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="mf">42</span><span class="p">,</span><span class="mf">2</span><span class="p">),</span>
+    <span class="nx">zoom</span><span class="o">:</span><span class="mf">9</span><span class="p">,</span>
+    <span class="nx">mapTypeId</span><span class="o">:</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">MapTypeId</span><span class="p">.</span><span class="nx">ROADMAP</span>
+  <span class="p">};</span>
+
+  <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;map&quot;</span><span class="p">),</span> <span class="nx">mapOptions</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Center: Posición en coordenadas geográficas</li>
+<li>Zoom: Nivel de zoom. El nivel 0 corresponde a nivel mundial. Alcanza hasta 18 niveles de zoom</li>
+<li>Tipos de mapas:<ul>
+<li>ROADMAP, que muestra los mosaicos normales en 2D predeterminados de Google Maps.</li>
+<li>SATELLITE muestra imágenes de satélite.</li>
+<li>HYBRID muestra una mezcla de mosaicos fotográficos y una capa de mosaicos para los elementos del mapa más destacados (carreteras, nombres de ciudades, etc.).</li>
+<li>TERRAIN muestra mosaicos de relieve físico para indicar las elevaciones del terreno y las fuentes de agua (montañas, ríos, etc.).</li>
+</ul>
+</li>
+</ul>
+<h2 id="controles-de-mapa-integrados">Controles de mapa integrados</h2>
+<p>El API de Google Maps dispone de varios controles integrados que puedes emplear en tus mapas:</p>
+<ul>
+<li>El <strong>control de zoom</strong> muestra un control deslizante (para mapas grandes) o pequeños botones "+/-" (para mapas pequeños) que permiten controlar el nivel de zoom del mapa. Este control aparece en la esquina superior izquierda del mapa de forma predeterminada en dispositivos no táctiles o en la esquina inferior izquierda del mapa en los dispositivos táctiles.</li>
+<li>El <strong>control de desplazamiento</strong> muestra botones para desplazarse por el mapa. Este control aparece en la esquina superior izquierda del mapa de forma predeterminada en dispositivos no táctiles. El control de desplazamiento también te permite girar imágenes de 45º, si están disponibles.</li>
+<li>El <strong>control de escala</strong> muestra un elemento de escala del mapa. Este control está inhabilitado de forma predeterminada.</li>
+<li>El <strong>control MapType</strong> permite al usuario alternar entre los diferentes tipos de mapas, como ROADMAP (mapa de carreteras) y SATELLITE (satélite). Este control aparece en la esquina superior derecha del mapa de forma predeterminada.</li>
+<li>El <strong>control de Street View</strong> incluye un icono de hombrecito naranja que se puede arrastrar hasta el mapa para habilitar la función de Street View. Este control aparece en la esquina superior izquierda del mapa de forma predeterminada.</li>
+<li>El <strong>control de giro</strong> incluye un icono circular pequeño que te permite girar mapas que contienen imágenes oblicuas. Este control aparece en la esquina superior izquierda del mapa de forma predeterminada (para obtener más información, consulta la documentación sobre imágenes de 45º).</li>
+<li>El <strong>control de mapa general</strong> muestra un mapa general en miniatura que refleja la ventana gráfica del mapa actual dentro de una zona más amplia. Este control aparece en la esquina inferior derecha del mapa y se muestra contraído de forma predeterminada.</li>
+</ul>
+<p>No puedes acceder ni modificar estos controles del mapa directamente, pero puedes modificar los campos MapOptions del mapa que afectan a la visibilidad y a la presentación de los controles</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nx">panControl</span><span class="o">:</span> <span class="nx">booleano</span><span class="p">,</span>
+    <span class="nx">zoomControl</span><span class="o">:</span> <span class="nx">booleano</span><span class="p">,</span>
+    <span class="nx">mapTypeControl</span><span class="o">:</span> <span class="nx">booleano</span><span class="p">,</span>
+    <span class="nx">scaleControl</span><span class="o">:</span> <span class="nx">booleano</span><span class="p">,</span>
+    <span class="nx">streetViewControl</span><span class="o">:</span> <span class="nx">booleano</span><span class="p">,</span>
+    <span class="nx">overviewMapControl</span><span class="o">:</span> <span class="nx">booleano</span><span class="p">,</span>
+    <span class="nx">rotateControl</span><span class="o">:</span><span class="nx">booleano</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="opciones-de-los-controles">Opciones de los controles</h3>
+<h4 id="control-de-zoom">Control de zoom</h4>
+<p>El <strong>control de zoom</strong> puede mostrarse en una de las siguientes opciones style:</p>
+<ul>
+<li>google.maps.ZoomControlStyle.SMALL muestra un control de zoom mini que solo dispone de los botones + y -. Este estilo es adecuado para mapas pequeños. En los dispositivos táctiles, este control se aparece como botones + y - que responden a los eventos de toque.</li>
+<li>google.maps.ZoomControlStyle.LARGE muestra el control deslizante de zoom estándar. En los dispositivos táctiles, este control se aparece como botones + y - que responden a los eventos de toque.</li>
+<li>google.maps.ZoomControlStyle.DEFAULT escoge un control de zoom apropiado en función del tamaño del mapa y del dispositivo en el que se esté utilizando.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nx">zoomControlOptions</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">style</span><span class="o">:</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">ZoomControlStyle</span><span class="p">.</span><span class="nx">SMALL</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="control-maptype">Control MapType</h4>
+<p>El <strong>control MapType</strong> puede mostrarse en una de las siguientes opciones style:</p>
+<ul>
+<li>google.maps.MapTypeControlStyle.HORIZONTAL_BAR muestra el conjunto de controles como botones situados en una barra horizontal como la que se muestra en Google Maps.</li>
+<li>google.maps.MapTypeControlStyle.DROPDOWN_MENU muestra un control de un solo botón que permite seleccionar el tipo de mapa a través de un menú desplegable.</li>
+<li>google.maps.MapTypeControlStyle.DEFAULT muestra el control "predeterminado", que depende del tamaño de la pantalla y puede cambiar en futuras versiones del API.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nx">mapTypeControlOptions</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">style</span><span class="o">:</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">MapTypeControlStyle</span><span class="p">.</span><span class="nx">DROPDOWN_MENU</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="como-colocar-los-controles">Cómo colocar los controles</h3>
+<p><img alt="Posición de los controles" src="../img/google_controls.png" title="Posición de los controles" /></p>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/control-positioning?hl=es">https://developers.google.com/maps/documentation/javascript/examples/control-positioning?hl=es</a></p>
+<h2 id="superposiciones">Superposiciones</h2>
+<p>Google Maps API incorpora varios tipos de superposiciones</p>
+<h3 id="marcadores">Marcadores</h3>
+<p>Los puntos en el mapa se muestran mediante marcadores. En algunas ocasiones, los marcadores pueden mostrar imágenes de iconos personalizados, que se denominan normalmente "iconos". Los marcadores e iconos son objetos de tipo Marker.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">myLatLng</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">lat</span><span class="o">:</span> <span class="mf">42</span><span class="p">,</span> <span class="nx">lng</span><span class="o">:</span> <span class="mf">2</span><span class="p">};</span>
+<span class="kd">const</span> <span class="nx">marker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Marker</span><span class="p">({</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="nx">myLatlng</span><span class="p">,</span>
+    <span class="nx">map</span><span class="o">:</span><span class="nx">map</span><span class="p">,</span>
+    <span class="nx">title</span><span class="o">:</span><span class="s2">&quot;Hello World!&quot;</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-simple?hl=es">https://developers.google.com/maps/documentation/javascript/examples/marker-simple?hl=es</a></p>
+<h4 id="marcadores-personalizados">Marcadores personalizados</h4>
+<div class="highlight"><pre><span></span><code><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Marker</span><span class="p">({</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getCenter</span><span class="p">(),</span>
+    <span class="nx">icon</span><span class="o">:</span> <span class="s1">&#39;http://betaserver.icgc.cat/mapicons/aed-2.png&#39;</span><span class="p">,</span>
+    <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
+  <span class="p">});</span>
+</code></pre></div>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-symbol-custom?hl=es">https://developers.google.com/maps/documentation/javascript/examples/marker-symbol-custom?hl=es</a></p>
+<p>Podéis encontrar más íconos de ejemplo en <a href="http://betaserver.icgc.cat/mapicons/">http://betaserver.icgc.cat/mapicons/</a></p>
+<p>Otro ejemplo con un marker personalizado y un punto de anclaje para que el icono esté centrado en la posición del punto del marcador.</p>
+<div class="highlight"><pre><span></span><code> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Marker</span><span class="p">({</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getCenter</span><span class="p">(),</span>
+    <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;https://betaserver2.icgc.cat/maki/pin-l-f+ceff00@2x.png&#39;</span><span class="p">,</span>
+        <span class="nx">anchor</span><span class="o">:</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">90</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
+  <span class="p">});</span>
+</code></pre></div>
+<h3 id="lineas">Líneas</h3>
+<p>Las líneas sobre el mapa se muestran mediante polilíneas, que representan una serie ordenada de ubicaciones. Las líneas son objetos de tipo Polyline.</p>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/polyline-simple?hl=es">https://developers.google.com/maps/documentation/javascript/examples/polyline-simple?hl=es</a></p>
+<h3 id="poligonos">Polígonos</h3>
+<p>Las áreas del mapa con forma irregular se muestran mediante polígonos, que son similares a las polilíneas. Al igual que las polilíneas, los polígonos representan una serie ordenada de ubicaciones; la diferencia estriba en que los polígonos definen la región que engloban.</p>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-hole?hl=es">https://developers.google.com/maps/documentation/javascript/examples/polygon-hole?hl=es</a></p>
+<p>Podéis ver la documentación tanto de líneas como de polígonos en <a href="https://developers.google.com/maps/documentation/javascript/reference/polygon?hl=es">https://developers.google.com/maps/documentation/javascript/reference/polygon?hl=es</a></p>
+<h3 id="ventana-de-informacion">Ventana de información</h3>
+<p>La <strong>ventana de información</strong> es también un tipo de superposición especial para la visualización de contenido (normalmente texto o imágenes) en un globo emergente que se muestra sobre el mapa en una ubicación determinada.</p>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple?hl=es">https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple?hl=es</a></p>
+<h3 id="superposiciones-personalizadas">Superposiciones personalizadas</h3>
+<p>Si quieres, también puedes implementar <strong>superposiciones personalizadas</strong>. Estas superposiciones personalizadas implementan la interfaz OverlayView.</p>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-simple?hl=es">https://developers.google.com/maps/documentation/javascript/examples/overlay-simple?hl=es</a></p>
+<h3 id="geojson">GeoJSON</h3>
+<p>Podemos agregar un geojson desde una URL que lo contenga o desde una variable que contenga el GeoJSON </p>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-style?hl=es">https://developers.google.com/maps/documentation/javascript/examples/layer-data-style?hl=es</a></p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">gasolineras</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;crs&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;urn:ogc:def:crs:OGC:1.3:CRS84&quot;</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="s2">&quot;features&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">{</span> 
+                <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">16.484670</span><span class="p">,</span> 
+                <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">28.428720</span><span class="p">,</span> 
+                <span class="s2">&quot;Nombre&quot;</span><span class="o">:</span> <span class="s2">&quot;REPSOL Horario Especial 0&quot;</span><span class="p">},</span> 
+                <span class="s2">&quot;geometry&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="o">-</span><span class="mf">16.48467</span><span class="p">,</span> <span class="mf">28.42872</span> <span class="p">]</span> <span class="p">}</span> 
+        <span class="p">},</span>
+        <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">{</span> 
+            <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">16.460470</span><span class="p">,</span> 
+            <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">28.449530</span><span class="p">,</span> 
+            <span class="s2">&quot;Nombre&quot;</span><span class="o">:</span> <span class="s2">&quot;DISA EL BOHIO L-D: 24H 0&quot;</span><span class="p">},</span> 
+            <span class="s2">&quot;geometry&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="o">-</span><span class="mf">16.46047</span><span class="p">,</span> <span class="mf">28.44953</span> <span class="p">]</span> <span class="p">}</span> 
+        <span class="p">}</span> 
+    <span class="p">]</span>
+<span class="p">};</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">addGeoJson</span><span class="p">(</span><span class="nx">gasolineras</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="kml">KML</h3>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-kml?hl=es">https://developers.google.com/maps/documentation/javascript/examples/layer-kml?hl=es</a></p>
+<h2 id="street-view">Street View</h2>
+<p>Son vistas panorámicas de 360 grados de las principales rutas del mundo.</p>
+<p>Se puede utilizar directamente como control en el mapa:
+MapOptions: streetViewControl: true o false.</p>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-simple?hl=es">https://developers.google.com/maps/documentation/javascript/examples/streetview-simple?hl=es</a></p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">uab</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">lat</span><span class="o">:</span> <span class="mf">41.503</span><span class="p">,</span> <span class="nx">lng</span><span class="o">:</span> <span class="mf">2.109</span> <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;map&quot;</span><span class="p">),</span> <span class="p">{</span>
+    <span class="nx">center</span><span class="o">:</span> <span class="nx">fenway</span><span class="p">,</span>
+    <span class="nx">zoom</span><span class="o">:</span> <span class="mf">14</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">panorama</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">StreetViewPanorama</span><span class="p">(</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pano&quot;</span><span class="p">),</span>
+    <span class="p">{</span>
+      <span class="nx">position</span><span class="o">:</span> <span class="nx">uab</span><span class="p">,</span>
+      <span class="nx">pov</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">heading</span><span class="o">:</span> <span class="mf">220</span><span class="p">,</span>
+        <span class="nx">pitch</span><span class="o">:</span> <span class="mf">10</span>
+      <span class="p">},</span>
+    <span class="p">}</span>
+  <span class="p">);</span>
+  <span class="nx">map</span><span class="p">.</span><span class="nx">setStreetView</span><span class="p">(</span><span class="nx">panorama</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="routing">Routing</h2>
+<p>Google dispone de un servicio de cálculo de rutas denominado DirectionsService.
+También dispone de un servicio de visualización de rutas denominado DirectionsRenderer.</p>
+<p>La petición de una ruta requiere de los siguientes parámetros.
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nx">origin</span><span class="o">:</span> <span class="nx">LatLng</span> <span class="o">|</span> <span class="nb">String</span> <span class="o">|</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Place</span><span class="p">,</span>
+  <span class="nx">destination</span><span class="o">:</span> <span class="nx">LatLng</span> <span class="o">|</span> <span class="nb">String</span> <span class="o">|</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Place</span><span class="p">,</span>
+  <span class="nx">travelMode</span><span class="o">:</span> <span class="nx">TravelMode</span><span class="p">,</span>
+  <span class="nx">transitOptions</span><span class="o">:</span> <span class="nx">TransitOptions</span><span class="p">,</span>
+  <span class="nx">drivingOptions</span><span class="o">:</span> <span class="nx">DrivingOptions</span><span class="p">,</span>
+  <span class="nx">unitSystem</span><span class="o">:</span> <span class="nx">UnitSystem</span><span class="p">,</span>
+  <span class="nx">waypoints</span><span class="p">[]</span><span class="o">:</span> <span class="nx">DirectionsWaypoint</span><span class="p">,</span>
+  <span class="nx">optimizeWaypoints</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+  <span class="nx">provideRouteAlternatives</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+  <span class="nx">avoidHighways</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+  <span class="nx">avoidTolls</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+  <span class="nx">region</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<ul>
+<li>origin: Origen de la ruta en (LatLng | String | google.maps.Place)</li>
+<li>destination: Destino de la ruta en (LatLng | String | google.maps.Place)</li>
+<li>travelMode: Modo de viaje <ul>
+<li>DRIVING: Opción por defecto (Coche)</li>
+<li>TRANSIT: Transporte público</li>
+<li>BICYCLING: Bicicleta</li>
+<li>WALKING: Caminando</li>
+</ul>
+</li>
+<li>transitOptions: {
+  arrivalTime: Fecha,
+  departureTime: Fecha,
+  modes[]: (BUS,RAIL,SUBWAY,TRAIN,TRAM)
+  routingPreference: (FEWER_TRANSFERS, LESS_WALKING)
+}</li>
+<li>drivingOptions:{
+  departureTime: Fecha,
+  trafficModel: (BEST_GUESS, OPTIMISTIC, PESSIMISTIC)
+},</li>
+<li>unitSystem: Unidadaes,</li>
+<li>waypoints[]: Puntos intermedios,</li>
+<li>optimizeWaypoints: Optimizar puntos intermedios (booleano),</li>
+<li>provideRouteAlternatives: Mostrar rutes alternatives (booleano),</li>
+<li>avoidHighways: Evitar autopistes (booleano),</li>
+<li>avoidTolls: Evitar peajes (booleano),</li>
+<li>region: Región donde se calcula la ruta</li>
+</ul>
+<p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/directions-simple?hl=es">https://developers.google.com/maps/documentation/javascript/examples/directions-simple?hl=es</a></p>
+<h2 id="ejemplos">Ejemplos</h2>
+<p>Podéis ver más ejemplos de código en <a href="https://developers.google.com/maps/documentation/javascript/examples/">https://developers.google.com/maps/documentation/javascript/examples/</a></p>
+<div class="admonition question">
+<p class="admonition-title">Ejercicio  pt</p>
+<ol>
+<li>Crear un mapa con la API de google maps. Iniciar el mapa centrado en Catalunya</li>
+<li>El mapa debe tener el fondo Hibrido activado por defecto</li>
+<li>Agregar un formulario para crear una ruta.
+    3.1 Las ciudades de origen deben ser: Barcelona, Terrassa, Sabadell, Cerdanyola y Manresa.
+    3.2 Los destino deben ser: Facultad de Letras de la UAB y el Parque del Tibidabo
+    3.3 Los medios de transporte debes ser: Conduciendo, Caminando, Bicicleta, Transporte público.
+    3.4 Botón para calcular la ruta.</li>
+<li>Mostrar la distancia de la ruta (en Km) y el tiempo de recorrido (en la unidad más adecuada, minutos u horas)</li>
+</ol>
+</div>
+<p><img alt="Ejemplo ejercicio" src="../img/ejercicio_google.png" title="Ejemplo ejercicio" />
+Ejemplo ejercicio</p>
+<h2 id="referencias">Referencias</h2>
+<p><a href="https://developers.google.com/maps/documentation/javascript/reference/?hl=es">https://developers.google.com/maps/documentation/javascript/reference/?hl=es</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
+      
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../arcgis/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              ArcGIS API for Javascript
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.term.missing": "Falta"}, "search": "../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e3fea51.min.js"></script>
+      
+    
+  </body>
+</html>

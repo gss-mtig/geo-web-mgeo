@@ -1,0 +1,677 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Programació de geoaplicacions web">
+      
+      
+      
+        <meta name="author" content="geo-web-mgeo">
+      
+      
+        <link rel="canonical" href="https://gss-mtig.github.io/geo-web-mgeo/arcgis/">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.1">
+    
+    
+      
+        <title>ArcGIS API for Javascript - Programació de geoaplicacions web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arcgis-api-for-javascript" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="https://gss-mtig.github.io/geo-web-mgeo/" title="Programació de geoaplicacions web" class="md-header__button md-logo" aria-label="Programació de geoaplicacions web">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació de geoaplicacions web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ArcGIS API for Javascript
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/gss-mtig/geo-web-mgeo/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://gss-mtig.github.io/geo-web-mgeo/" title="Programació de geoaplicacions web" class="md-nav__button md-logo" aria-label="Programació de geoaplicacions web">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Programació de geoaplicacions web
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gss-mtig/geo-web-mgeo/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google/" class="md-nav__link">
+        Google Maps JavaScript API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ArcGIS API for Javascript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ArcGIS API for Javascript
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generar-la-api-key" class="md-nav__link">
+    Generar la API KEY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mi-primer-mapa" class="md-nav__link">
+    Mi primer mapa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estilos-disponibles" class="md-nav__link">
+    Estilos disponibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algunos-widgets-disponibles" class="md-nav__link">
+    Algunos Widgets disponibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-capas" class="md-nav__link">
+    Tipos de capas
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de capas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raster" class="md-nav__link">
+    Raster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    Vector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openLayers/" class="md-nav__link">
+        OpenLayers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox.md" class="md-nav__link">
+        Mapbox GL (mapLibre)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaflet.md" class="md-nav__link">
+        Leaflet
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generar-la-api-key" class="md-nav__link">
+    Generar la API KEY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mi-primer-mapa" class="md-nav__link">
+    Mi primer mapa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estilos-disponibles" class="md-nav__link">
+    Estilos disponibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algunos-widgets-disponibles" class="md-nav__link">
+    Algunos Widgets disponibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-capas" class="md-nav__link">
+    Tipos de capas
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de capas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raster" class="md-nav__link">
+    Raster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    Vector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/gss-mtig/geo-web-mgeo/edit/master/docs/arcgis.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="arcgis-api-for-javascript">ArcGIS API for Javascript</h1>
+<p>La <strong>ArcGIS API for JavaScript</strong> permite crear aplicaciones web interactivas y tiene visualizaciones tanto en 2D como en 3D. Forma parte de todo el ecosistema ArcGIS de ESRI.</p>
+<p>Al igual que la API de google está soportada por una gran empresa como lo és ESRI. Está integrado con los recursos de la platadforma de ArcGIS Online. Para acceder a los servicios de ArcGIS como por ejemplo el mapa base, geocodificador, routing, etc es necesario tener una API KEY y tienen un coste (aunque tienen uso gratis pero limitado).  </p>
+<p>La referencia de la API la podemos ver en <a href="https://developers.arcgis.com/javascript/latest/">https://developers.arcgis.com/javascript/latest/</a></p>
+<h2 id="generar-la-api-key">Generar la API KEY</h2>
+<ol>
+<li>Ingresar en el dashbord <a href="https://developers.arcgis.com/dashboard/">https://developers.arcgis.com/dashboard/</a></li>
+<li>Seleccionar la opción de ArcGIS API for JavaScript</li>
+<li>Seleccionar la opción de "no quiero especificar"</li>
+<li>Hacer click en el botón de nueva API KEY</li>
+</ol>
+<h2 id="mi-primer-mapa">Mi primer mapa</h2>
+<p>Crear un archivo llamado arcgis.html y copiar lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.18/esri/themes/light/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="nt">html</span><span class="o">,</span>
+        <span class="nt">body</span><span class="o">,</span>
+        <span class="p">#</span><span class="nn">viewDiv</span> <span class="p">{</span>
+          <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+          <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+          <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+          <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.18/&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nx">require</span><span class="p">([</span><span class="s2">&quot;esri/config&quot;</span><span class="p">,</span><span class="s2">&quot;esri/Map&quot;</span><span class="p">,</span> <span class="s2">&quot;esri/views/MapView&quot;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">esriConfig</span><span class="p">,</span><span class="nx">Map</span><span class="p">,</span> <span class="nx">MapView</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="nx">esriConfig</span><span class="p">.</span><span class="nx">apiKey</span> <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span><span class="p">;</span>
+
+            <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">({</span>
+                <span class="nx">basemap</span><span class="o">:</span> <span class="s2">&quot;arcgis-topographic&quot;</span> <span class="c1">// Basemap layer service</span>
+            <span class="p">});</span>
+
+            <span class="kd">const</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MapView</span><span class="p">({</span>
+                <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
+                <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="mf">2</span><span class="p">,</span> <span class="mf">41.5</span><span class="p">],</span> <span class="c1">// Longitude, latitude</span>
+                <span class="nx">zoom</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span> <span class="c1">// Zoom level</span>
+                <span class="nx">container</span><span class="o">:</span> <span class="s2">&quot;viewDiv&quot;</span> <span class="c1">// Div element</span>
+            <span class="p">});</span>
+
+        <span class="p">});</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewDiv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Una diferencia con las otras librerias de mapas que veremos es el concepto de cargar módulos. Podemos ver en nuestro código que se llama a la función require y que se le pasa una matriz como parámetro. Esta matriz contiene los módulos que queremos cargar. </p>
+<h2 id="estilos-disponibles">Estilos disponibles</h2>
+<p>La API dispone de varios estilos (themes) para la interfaz de la aplicación</p>
+<p>Podemos ver los estilo en <a href="https://developers.arcgis.com/javascript/latest/styling/#themes">https://developers.arcgis.com/javascript/latest/styling/#themes</a></p>
+<h2 id="algunos-widgets-disponibles">Algunos Widgets disponibles</h2>
+<p><a href="https://developers.arcgis.com/javascript/latest/api-reference/">https://developers.arcgis.com/javascript/latest/api-reference/</a></p>
+<ul>
+<li>BaseMap Toggle: permite al usuario final cambiar entre mapas base. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html</a></li>
+<li>LayerList: proporciona una forma de mostrar una lista de capas y activar / desactivar su visibilidad. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html</a></li>
+<li>Legend: muestra etiquetas y símbolos para capas en un mapa. Las etiquetas y sus símbolos correspondientes dependen de los valores establecidos en la capa. La leyenda solo mostrará las capas y subcapas que son visibles en la vista. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html</a>  </li>
+<li>Locate: anima la vista a la ubicación actual del usuario. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Locate.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Locate.html</a></li>
+<li>Measurement: agrupa y administra múltiples herramientas de medición y le permite cambiar fácilmente entre ellas. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Measurement.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Measurement.html</a></li>
+<li>ScaleBar: muestra una barra de escala en el mapa o en un nodo HTML especificado. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html</a></li>
+<li>Print: conecta su aplicación con un servicio de impresión para permitir la impresión del mapa. Aprovecha la funcionalidad de impresión cartográfica completa de alta calidad del lado del servidor mediante el servicio ExportWebMap de ArcGIS, que se puede configurar con plantillas de diseño personalizadas. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Print.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Print.html</a></li>
+<li>Editor: proporciona una experiencia de edición lista para usar para ayudar a optimizar la experiencia de edición dentro de una aplicación web. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html</a></li>
+</ul>
+<h2 id="tipos-de-capas">Tipos de capas</h2>
+<h3 id="raster">Raster</h3>
+<ul>
+<li>MapImageLayer: permite mostrar y analizar datos de subcapas definidas en un servicio de mapas, exportando imágenes en lugar de elementos. Las imágenes del servicio de mapas se generan dinámicamente en el servidor en función de una solicitud, que incluye un LOD (nivel de detalle), un cuadro delimitador, dpi, referencia espacial y otras opciones. Servicio que viene de  ArcGIS Server. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html</a></li>
+<li>ImageryTileLayer: presenta datos ráster de un servicio de imágenes en teselas. Servicio que viene de  ArcGIS Server. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-ImageryTileLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-ImageryTileLayer.html</a></li>
+<li>WebTileLayer: proporciona una forma sencilla de agregar mapas de teselas que no son de ArcGIS Server como una capa a un mapa. Esto corresponde a los servicios XYZ. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WebTileLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WebTileLayer.html</a></li>
+<li>WMSLayer: se utiliza para crear capas basadas en OGC Web Map Services (WMS). <strong>WMSLayer</strong> inicialmente ejecuta una solicitud WMS GetCapabilities, que puede requerir CORS o una página de proxy. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WMSLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WMSLayer.html</a></li>
+<li>WMTSLayer: se utiliza para crear capas basadas en OGC Web Map Services (WMTS). Al igual que el <em>WMSLayer</em> el <strong>WMTSLayer</strong> inicialmente ejecuta una solicitud WMTS GetCapabilities, que puede requerir CORS o una página de proxy. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WMTSLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WMTSLayer.html</a></li>
+<li>OpenStreetMapLayer: permite usar mapas base de OpenStreetMap. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-OpenStreetMapLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-OpenStreetMapLayer.html</a></li>
+</ul>
+<h3 id="vector">Vector</h3>
+<ul>
+<li>FeatureLayer: se puede crear a partir de un servicio de mapas o un servicio de entidades; Elementos del portal de ArcGIS Online o ArcGIS Enterprise; o de una variedad de funciones del lado del cliente. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html</a></li>
+<li>CSVLayer: es una capa de puntos basada en un archivo CSV (.csv, .txt). CSV es un formato de archivo de texto sin formato que se utiliza para representar datos tabulares, incluidas características de puntos geográficos (latitud, longitud). Normalmente, la coordenada de latitud es el valor Y y la coordenada de longitud es el valor X. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-CSVLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-CSVLayer.html</a></li>
+<li>GeoRSSLayer: se usa para crear una capa basada en GeoRSS. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoRSSLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoRSSLayer.html</a></li>
+<li>KMLLayer: se utiliza para crear una capa basada en un archivo KML (.kml, .kmz). <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-KMLLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-KMLLayer.html</a></li>
+<li>GeoJSONLayer: se utiliza para crear una capa basada en GeoJSON. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoJSONLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoJSONLayer.html</a></li>
+<li>VectorTileLayer: accede a teselas de datos almacenados en caché y los presenta en formato vectorial. La forma en que se muestra VectorTileLayer está definida por la Especificación de estilo de Mapbox. La información de estilo de VectorTileLayer se almacena por separado de sus mosaicos. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VectorTileLayer.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VectorTileLayer.html</a></li>
+</ul>
+<h2 id="ejemplos">Ejemplos</h2>
+<p>Podéis ver más ejemplos de código en <a href="https://developers.arcgis.com/javascript/latest/sample-code/">https://developers.arcgis.com/javascript/latest/sample-code/</a> </p>
+<div class="admonition question">
+<p class="admonition-title">Ejercicio  pt</p>
+<ol>
+<li>Preparar un mapa con la capa Streets centrada en España. Referencia de las capas base: <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap">https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap</a></li>
+<li>Sobre el ejercicio anterior añadir el widget toggleMap para cambiar entre la capa streets y la capa satellite.</li>
+<li>Añadir servicio WMS del ICGC de la ortofoto de 25c.</li>
+</ol>
+</div>
+<h2 id="referencias">Referencias</h2>
+<p><a href="https://developers.arcgis.com/javascript/latest/">https://developers.arcgis.com/javascript/latest/</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
+      
+        <a href="../google/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Google Maps JavaScript API
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../openLayers/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              OpenLayers
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.term.missing": "Falta"}, "search": "../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e3fea51.min.js"></script>
+      
+    
+  </body>
+</html>

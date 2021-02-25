@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/dark/main.css">
+    <style>
+        html,
+        body,
+        #viewDiv {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          width: 100%;
+        }
+    </style>
+    
+    <script src="https://js.arcgis.com/4.18/"></script>
+    <script>
+        require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+
+            esriConfig.apiKey = "AAPK267250dffe3943008bcaf3f863c0491eUMQIk18BudT4HUGAFSFwCNi8hnMoLBCRcayu0ZPeXuJdL9jgTe_TdMlpuaPSdYF8";
+
+            const map = new Map({
+                basemap: "arcgis-topographic" // Basemap layer service
+            });
+
+            const view = new MapView({
+                map: map,
+                center: [2, 41.5], // Longitude, latitude
+                zoom: 7, // Zoom level
+                container: "viewDiv" // Div element
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="viewDiv"></div>
+
+</body>
+</html>

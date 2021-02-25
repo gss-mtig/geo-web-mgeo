@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE"></script>
+</head>
+<body>
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+    <script>
+        const mapOptions = {
+            center: new google.maps.LatLng(42,2),
+            zoom:9,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        const map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+    </script>
+</body>
+</html>
