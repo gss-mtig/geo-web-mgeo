@@ -21,8 +21,8 @@ nav:
 - Google Maps JavaScript API: google.md
 - ArcGIS API for Javascript: arcgis.md
 - OpenLayers: openLayers.md
-- Mapbox GL (mapLibre): mapbox.md
 - Leaflet: leaflet.md
+- Mapbox GL (mapLibre): mapbox.md
 
 plugins:
     - search
