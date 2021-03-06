@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol-layerswitcher@3.8.3/dist/ol-layerswitcher.css">
     <style>
       .map {
         height: 600px;
@@ -9,42 +10,51 @@
       }
     </style>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-layerswitcher@3.8.3/dist/ol-layerswitcher.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.2/proj4.min.js" crossorigin="anonymous"></script>
     <title>Ejemplo OpenLayers</title>
   </head>
   <body>
     <h2>Mi primer mapa</h2>
     <div id="map" class="map"></div>
     <script type="text/javascript">
+
+      proj4.defs("EPSG:25831","+proj=utm +zone=31 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+   
       const map = new ol.Map({
         target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-        ],
+        layers: [],
+        projection: 'EPSG:3857',
         view: new ol.View({
           center: ol.proj.fromLonLat([1.5, 41.5]),
           zoom: 9
         })
       });
 
+      const osm = new ol.layer.Tile({
+        type: 'base',
+        visible: true,
+        title: 'OSM',
+        source: new ol.source.OSM()
+      });
+
       const inundacion500Teselada = new ol.layer.Tile({
+        title: 'inundacion 500 teselada',
+        visible: false,
         source: new ol.source.TileWMS({
             url:'https://servicios.idee.es/wms-inspire/riesgos-naturales/inundaciones?',
             params: {'LAYERS': 'NZ.Flood.FluvialT500','FORMAT': 'image/png','TRANSPARENT': 'true'}
         })
       });
 
-      map.addLayer(inundacion500Teselada);
-
       const inundacion500Simple = new ol.layer.Image({
+        title: 'inundacion 500 Simple',
+        visible: false,
         source: new ol.source.ImageWMS({
             url:'https://servicios.idee.es/wms-inspire/riesgos-naturales/inundaciones?',
             params: {'LAYERS': 'NZ.Flood.FluvialT500','FORMAT': 'image/png','TRANSPARENT': 'true'}
         })
         });
-
-        map.addLayer(inundacion500Simple);
 
         const vectorSource = new ol.source.Vector({
             url: "https://raw.githubusercontent.com/geostarters/dades/master/fulls50M.geojson",
@@ -53,6 +63,8 @@
 
         const vectorLayer = new ol.layer.Vector({
             source: vectorSource,
+            title: 'Hojas',
+            visible: false,
             style: new ol.style.Style({
                 stroke: new ol.style.Stroke({
                 color: 'blue',
@@ -65,7 +77,52 @@
             }),
         });
 
-        map.addLayer(vectorLayer);
+        const MunicipisSource = new ol.source.Vector({
+          url: "https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG25831.geojson",
+          format: new ol.format.GeoJSON({
+            dataProjection: 'EPSG:25831',
+            featureProjection: 'EPSG:3857'
+          })
+        });
+
+        const municipisLayer = new ol.layer.Vector({
+            source: MunicipisSource,
+            title: 'Municipios',
+            visible: true,
+            style: new ol.style.Style({
+                stroke: new ol.style.Stroke({
+                color: 'red',
+                }),
+                fill: new ol.style.Fill({
+                color: 'rgba(255, 0, 0, 0.1)',
+                }),
+            }),
+        });
+
+        const baseLayers = new ol.layer.Group({
+          'title': 'Capas base',
+          layers: [
+            osm
+          ]
+        });
+        map.addLayer(baseLayers);
+
+        const overlays = new ol.layer.Group({
+          'title': 'Otras capas',
+          combine: false,
+          layers: [
+            vectorLayer,
+            inundacion500Simple,
+            inundacion500Teselada,
+            municipisLayer
+          ]
+        })
+        map.addLayer(overlays);
+
+        const layerSwitcher = new ol.control.LayerSwitcher({ 
+          tipLabel: 'Leyenda' 
+        });
+        map.addControl(layerSwitcher);
 
     </script>
   </body>
