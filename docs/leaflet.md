@@ -148,8 +148,7 @@ https://gist.github.com/sigdeletras/8e14a1599d0ba5393d668c808f2b8061
 ```
 
 !!! question "Ejercicio pt"
-
-Crear un archivo llamado ejercicios_leaflet.html y en este archivo crear un mapa de leaflet que contenga lo siguiente
+    Crear un archivo llamado ejercicios_leaflet.html y en este archivo crear un mapa de leaflet que contenga lo siguiente
 
     1. La capa base que sea el wms de topogris del ICGC.
     2. Cargar la capa Pob20k geojson de https://raw.githubusercontent.com/geostarters/dades/master/Pob20k.geojson
