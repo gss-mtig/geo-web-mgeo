@@ -158,4 +158,3 @@ https://gist.github.com/sigdeletras/8e14a1599d0ba5393d668c808f2b8061
     6. Agregar un icono personalizado a la capa de Refugis
     7. Al hacer click sobre un Refugio que se muestre la información del refugio: Nombre, Cota y Tipo
     8. Agregar un nuevo botón al mapa que haga zoom sobre el Pedraforca
-
