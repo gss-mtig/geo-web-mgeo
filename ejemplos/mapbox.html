@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapbox</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js'></script>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script type="module">
+        
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',                
+            center: [2.16859, 41.3954],
+            zoom: 13,
+            maxZoom: 14,
+            hash: true,
+            pitch: 45
+        });
+    </script>
+</body>
+</html>

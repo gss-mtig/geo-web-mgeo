@@ -429,6 +429,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../turf/" class="md-nav__link">
+        Turf
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../mapbox/" class="md-nav__link">
         Mapbox GL (mapLibre)
       </a>
@@ -693,25 +708,18 @@
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Ejercicio pt</p>
-</div>
 <p>Crear un archivo llamado ejercicios_leaflet.html y en este archivo crear un mapa de leaflet que contenga lo siguiente</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="mf">1.</span> <span class="n">La</span> <span class="n">capa</span> <span class="n">base</span> <span class="n">que</span> <span class="n">sea</span> <span class="n">el</span> <span class="n">wms</span> <span class="n">de</span> <span class="kr">to</span><span class="n">pogris</span> <span class="n">del</span> <span class="n">ICGC</span><span class="mf">.</span>
-<span class="mf">2.</span> <span class="n">Cargar</span> <span class="n">la</span> <span class="n">capa</span> <span class="n">Pob20k</span> <span class="n">geojson</span> <span class="n">de</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="mf">.</span><span class="n">githubusercontent</span><span class="mf">.</span><span class="n">com</span><span class="o">/</span><span class="n">geostarters</span><span class="o">/</span><span class="n">dades</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">Pob20k</span><span class="mf">.</span><span class="n">geojson</span>
-<span class="mf">3.</span> <span class="n">Sobre</span> <span class="n">la</span> <span class="n">capa</span> <span class="n">Pob20k</span> <span class="n">hacer</span> <span class="n">un</span> <span class="n">temático</span> <span class="p">(</span><span class="n">el</span> <span class="n">campo</span> <span class="n">para</span> <span class="n">hacer</span> <span class="n">el</span> <span class="n">temático</span> <span class="n">es</span> <span class="n">libre</span><span class="p">)</span>
-<span class="mf">4.</span> <span class="n">Cargar</span> <span class="n">la</span> <span class="n">capa</span> <span class="n">Refugis</span> <span class="n">geojson</span> <span class="n">de</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="mf">.</span><span class="n">githubusercontent</span><span class="mf">.</span><span class="n">com</span><span class="o">/</span><span class="n">geostarters</span><span class="o">/</span><span class="n">dades</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">refugis</span><span class="mf">.</span><span class="n">geojson</span>
-<span class="mf">5.</span> <span class="n">Aplicar</span> <span class="n">un</span> <span class="n">filtro</span> <span class="n">a</span> <span class="n">la</span> <span class="n">Capa</span> <span class="n">Refugis</span> <span class="n">donde</span> <span class="n">solo</span> <span class="n">se</span> <span class="n">muestren</span> <span class="n">los</span> <span class="n">refugios</span> <span class="n">con</span> <span class="n">una</span> <span class="n">Cota</span> <span class="n">superior</span> <span class="n">a</span> <span class="mf">2000</span>
-<span class="mf">6.</span> <span class="n">Agregar</span> <span class="n">un</span> <span class="n">icono</span> <span class="n">personalizado</span> <span class="n">a</span> <span class="n">la</span> <span class="n">capa</span> <span class="n">de</span> <span class="n">Refugis</span>
-<span class="mf">7.</span> <span class="n">Al</span> <span class="n">hacer</span> <span class="n">click</span> <span class="n">sobre</span> <span class="n">un</span> <span class="n">Refugio</span> <span class="n">que</span> <span class="n">se</span> <span class="n">muestre</span> <span class="n">la</span> <span class="n">información</span> <span class="n">del</span> <span class="n">refugio</span><span class="p">:</span> <span class="n">Nombre</span><span class="p">,</span> <span class="n">Cota</span> <span class="n">y</span> <span class="n">Tipo</span>
-<span class="mf">8.</span> <span class="n">Agregar</span> <span class="n">un</span> <span class="n">nuevo</span> <span class="n">botón</span> <span class="n">al</span> <span class="n">mapa</span> <span class="n">que</span> <span class="n">haga</span> <span class="n">zoom</span> <span class="n">sobre</span> <span class="n">el</span> <span class="n">Pedraforca</span>
-</code></pre></div>
-</td></tr></table>
+<ol>
+<li>La capa base que sea el wms de topogris del ICGC.</li>
+<li>Cargar la capa Pob20k geojson de <a href="https://raw.githubusercontent.com/geostarters/dades/master/Pob20k.geojson">https://raw.githubusercontent.com/geostarters/dades/master/Pob20k.geojson</a></li>
+<li>Sobre la capa Pob20k hacer un temático (el campo para hacer el temático es libre)</li>
+<li>Cargar la capa Refugis geojson de <a href="https://raw.githubusercontent.com/geostarters/dades/master/refugis.geojson">https://raw.githubusercontent.com/geostarters/dades/master/refugis.geojson</a></li>
+<li>Aplicar un filtro a la Capa Refugis donde solo se muestren los refugios con una Cota superior a 2000</li>
+<li>Agregar un icono personalizado a la capa de Refugis</li>
+<li>Al hacer click sobre un Refugio que se muestre la información del refugio: Nombre, Cota y Tipo</li>
+<li>Agregar un nuevo botón al mapa que haga zoom sobre el Pedraforca</li>
+</ol>
+</div>
                 
               
               
@@ -744,13 +752,13 @@
         </a>
       
       
-        <a href="../mapbox/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../turf/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Siguiente
               </span>
-              Mapbox GL (mapLibre)
+              Turf
             </div>
           </div>
           <div class="md-footer__button md-icon">
