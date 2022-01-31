@@ -229,9 +229,9 @@ MapOptions: streetViewControl: true o false.
 Ejemplo: https://developers.google.com/maps/documentation/javascript/examples/streetview-simple?hl=es
 
 ``` js
-const uab = { lat: 41.503, lng: 2.109 };
+const uab = { lat: 41.503317, lng: 2.107957 };
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: fenway,
+    center: uab,
     zoom: 14,
   });
   const panorama = new google.maps.StreetViewPanorama(
@@ -239,7 +239,7 @@ const uab = { lat: 41.503, lng: 2.109 };
     {
       position: uab,
       pov: {
-        heading: 220,
+        heading: 270,
         pitch: 10
       },
     }
