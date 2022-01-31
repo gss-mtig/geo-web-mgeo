@@ -12,14 +12,14 @@ Crear un archivo llamado openlayers.html y copiar lo siguiente:
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/css/ol.css" type="text/css">
     <style>
       .map {
         height: 600px;
         width: 100%;
       }
     </style>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/build/ol.js"></script>
     <title>Ejemplo OpenLayers</title>
   </head>
   <body>
@@ -44,6 +44,7 @@ Crear un archivo llamado openlayers.html y copiar lo siguiente:
 ```
 
 Resumen de pasos
+
 1. Incluir las librerías de OpenLayers
 2. Crear un contenedor DIV donde dibujar el mapa
 3. Declarar una variable global a la que asignar el mapa
