@@ -586,14 +586,14 @@
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/css/ol.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
       <span class="p">.</span><span class="nc">map</span> <span class="p">{</span>
         <span class="k">height</span><span class="p">:</span> <span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
         <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/build/ol.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo OpenLayers<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -616,15 +616,19 @@
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Resumen de pasos
-1. Incluir las librerías de OpenLayers
-2. Crear un contenedor DIV donde dibujar el mapa
-3. Declarar una variable global a la que asignar el mapa
-4. Definir una función de inicialización del mapa
-    1. Crear un mapa (objeto ol.Map)
-    2. Crear capas (objeto ol.Layer)
-    3. Añadir capas al mapa
-    4. Posicionar la vista del mapa</p>
+<p>Resumen de pasos</p>
+<ol>
+<li>Incluir las librerías de OpenLayers</li>
+<li>Crear un contenedor DIV donde dibujar el mapa</li>
+<li>Declarar una variable global a la que asignar el mapa</li>
+<li>Definir una función de inicialización del mapa<ol>
+<li>Crear un mapa (objeto ol.Map)</li>
+<li>Crear capas (objeto ol.Layer)</li>
+<li>Añadir capas al mapa</li>
+<li>Posicionar la vista del mapa</li>
+</ol>
+</li>
+</ol>
 <h2 id="principales-objetos">Principales objetos</h2>
 <h3 id="el-mapa-y-la-vista">El mapa y la vista</h3>
 <p><strong>ol/Map</strong> es la clase principal de OpenLayers ya que define el mapa. Se representa en un contenedor de destino <em>terget</em> (por ejemplo, un elemento div en la página web que contiene el mapa). Todas las propiedades del mapa se pueden configurar en el momento de la construcción o mediante métodos de establecimiento, por Ej. setTarget(). </p>

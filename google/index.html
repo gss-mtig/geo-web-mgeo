@@ -854,9 +854,9 @@
 <p>Se puede utilizar directamente como control en el mapa:
 MapOptions: streetViewControl: true o false.</p>
 <p>Ejemplo: <a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-simple?hl=es">https://developers.google.com/maps/documentation/javascript/examples/streetview-simple?hl=es</a></p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">uab</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">lat</span><span class="o">:</span> <span class="mf">41.503</span><span class="p">,</span> <span class="nx">lng</span><span class="o">:</span> <span class="mf">2.109</span> <span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">uab</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">lat</span><span class="o">:</span> <span class="mf">41.503317</span><span class="p">,</span> <span class="nx">lng</span><span class="o">:</span> <span class="mf">2.107957</span> <span class="p">};</span>
   <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;map&quot;</span><span class="p">),</span> <span class="p">{</span>
-    <span class="nx">center</span><span class="o">:</span> <span class="nx">fenway</span><span class="p">,</span>
+    <span class="nx">center</span><span class="o">:</span> <span class="nx">uab</span><span class="p">,</span>
     <span class="nx">zoom</span><span class="o">:</span> <span class="mf">14</span><span class="p">,</span>
   <span class="p">});</span>
   <span class="kd">const</span> <span class="nx">panorama</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">StreetViewPanorama</span><span class="p">(</span>
@@ -864,7 +864,7 @@ MapOptions: streetViewControl: true o false.</p>
     <span class="p">{</span>
       <span class="nx">position</span><span class="o">:</span> <span class="nx">uab</span><span class="p">,</span>
       <span class="nx">pov</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">heading</span><span class="o">:</span> <span class="mf">220</span><span class="p">,</span>
+        <span class="nx">heading</span><span class="o">:</span> <span class="mf">270</span><span class="p">,</span>
         <span class="nx">pitch</span><span class="o">:</span> <span class="mf">10</span>
       <span class="p">},</span>
     <span class="p">}</span>
