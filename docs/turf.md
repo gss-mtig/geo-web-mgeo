@@ -107,7 +107,7 @@ Ejemplo
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors'
         }).addTo(map);
 
-        const satelite = L.tileLayer('https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=QF4QjNJnruyw9flGxO5r',{
+        const satelite = L.tileLayer('https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=dr1MVIVb840BbU3dGpV8',{
           tileSize: 512,
           zoomOffset: -1,
           minZoom: 1,

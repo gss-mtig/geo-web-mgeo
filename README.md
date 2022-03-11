@@ -42,6 +42,18 @@ pip install mkdocs-material
 * `mkdocs build`: Compila la documentación en html.
 * `mkdocs gh-deploy`: Publica la documentación en gh-pages.
 
+#### Nota
+    
+1. git subtree split --prefix site -b gh-pages # create a local gh-pages branch containing the splitted output folder
+2. git push -f origin gh-pages:gh-pages # force the push of the gh-pages branch to the remote gh-pages branch at origin
+3. git branch -D gh-pages # delete the local gh-pages because you will need it: ref
+
+Para publicar en gh-pages
+
+1. mkdocs build
+2. ghp-import site
+3. git push origin gh-pages
+
 ### Layout
 
     mkdocs.yml    # El fichero de configuración.
