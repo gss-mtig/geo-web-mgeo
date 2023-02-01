@@ -108,10 +108,10 @@ https://developers.arcgis.com/javascript/latest/api-reference/
 
 Podéis ver más ejemplos de código en https://developers.arcgis.com/javascript/latest/sample-code/ 
 
-!!! question "Ejercicio  pt"
-    1. Preparar un mapa con la capa Osm centrada en España. Referencia de las capas base: https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap
-    2. Sobre el ejercicio anterior añadir el widget toggleMap para cambiar entre la capa Osm y la capa satellite.
-    3. Añadir servicio WMS del ICGC de la ortofoto de 25c.
+!!! question "Ejercicio 1.5 pts"
+    1. Preparar un mapa con la capa Osm centrada en España. Referencia de las capas base: https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap **(0.5 pt)**
+    2. Sobre el ejercicio anterior añadir el widget toggleMap para cambiar entre la capa Osm y la capa satellite. **(0.5 pt)**
+    3. Añadir servicio WMS del ICGC de la ortofoto de 25c. **(0.5 pt)**
 
 ## Referencias
 

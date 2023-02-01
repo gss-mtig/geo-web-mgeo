@@ -147,14 +147,14 @@ https://gist.github.com/sigdeletras/8e14a1599d0ba5393d668c808f2b8061
 <script src="http://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
 ```
 
-!!! question "Ejercicio pt"
+!!! question "Ejercicio 4 pts"
     Crear un archivo llamado ejercicios_leaflet.html y en este archivo crear un mapa de leaflet que contenga lo siguiente
 
-    1. La capa base que sea el wms de topogris del ICGC.
-    2. Cargar la capa Pob20k geojson de https://raw.githubusercontent.com/geostarters/dades/master/Pob20k.geojson
-    3. Sobre la capa Pob20k hacer un temático (el campo para hacer el temático es libre)
-    4. Cargar la capa Refugis geojson de https://raw.githubusercontent.com/geostarters/dades/master/refugis.geojson
-    5. Aplicar un filtro a la Capa Refugis donde solo se muestren los refugios con una Cota superior a 2000
-    6. Agregar un icono personalizado a la capa de Refugis
-    7. Al hacer click sobre un Refugio que se muestre la información del refugio: Nombre, Cota y Tipo
-    8. Agregar un nuevo botón al mapa que haga zoom sobre el Pedraforca
+    1. La capa base que sea el wms de topogris del ICGC. **(0.5 pt)**
+    2. Cargar la capa Pob20k geojson de https://raw.githubusercontent.com/geostarters/dades/master/Pob20k.geojson **(0.5 pt)**
+    3. Sobre la capa Pob20k hacer un temático (el campo para hacer el temático es libre) **(0.5 pt)**
+    4. Cargar la capa Refugis geojson de https://raw.githubusercontent.com/geostarters/dades/master/refugis.geojson **(0.5 pt)**
+    5. Aplicar un filtro a la Capa Refugis donde solo se muestren los refugios con una Cota superior a 2000 **(0.5 pt)**
+    6. Agregar un icono personalizado a la capa de Refugis **(0.5 pt)**
+    7. Al hacer click sobre un Refugio que se muestre la información del refugio: Nombre, Cota y Tipo **(0.5 pt)**
+    8. Agregar un nuevo botón al mapa que haga zoom sobre el Pedraforca **(0.5 pt)**

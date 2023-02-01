@@ -301,15 +301,15 @@ Ejemplo: https://developers.google.com/maps/documentation/javascript/examples/di
 
 Podéis ver más ejemplos de código en https://developers.google.com/maps/documentation/javascript/examples/
 
-!!! question "Ejercicio  pt"
-    1. Crear un mapa con la API de google maps. Iniciar el mapa centrado en Catalunya
-    2. El mapa debe tener el fondo Hibrido activado por defecto
-    3. Agregar un formulario para crear una ruta.
-        3.1 Las ciudades de origen deben ser: Barcelona, Terrassa, Sabadell, Cerdanyola y Manresa.
-        3.2 Los destino deben ser: Facultad de Letras de la UAB y el Parque del Tibidabo
-        3.3 Los medios de transporte debes ser: Conduciendo, Caminando, Bicicleta, Transporte público.
-        3.4 Botón para calcular la ruta.
-    4. Mostrar la distancia de la ruta (en Km) y el tiempo de recorrido (en la unidad más adecuada, minutos u horas)
+!!! question "Ejercicio 2 pts"
+    1. Crear un mapa con la API de google maps. Iniciar el mapa centrado en Catalunya **(0.5 pt)**
+    2. El mapa debe tener el fondo Hibrido activado por defecto **(0.5 pt)**
+    3. Agregar un formulario para crear una ruta. **(0.5 pt)**
+      * Las ciudades de origen deben ser: Barcelona, Terrassa, Sabadell, Cerdanyola y Manresa.
+      Los destino deben ser: Facultad de Letras de la UAB y el Parque del Tibidabo
+      * Los medios de transporte debes ser: Conduciendo, Caminando, Bicicleta, Transporte público.
+      * Botón para calcular la ruta.
+    4. Mostrar la distancia de la ruta (en Km) y el tiempo de recorrido (en la unidad más adecuada, minutos u horas) **(0.5 pt)**
 
 ![Ejemplo ejercicio](img/ejercicio_google.png "Ejemplo ejercicio")
 Ejemplo ejercicio
