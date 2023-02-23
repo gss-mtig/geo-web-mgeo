@@ -545,7 +545,7 @@
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.22/esri/themes/light/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.26/esri/themes/light/main.css&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
 <span class="w">        </span><span class="nt">html</span><span class="o">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">body</span><span class="o">,</span><span class="w"></span>
@@ -557,7 +557,7 @@
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.22/&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.26/&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
 <span class="w">        </span><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;esri/config&quot;</span><span class="p">,</span><span class="s2">&quot;esri/Map&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;esri/views/MapView&quot;</span><span class="p">],</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">esriConfig</span><span class="p">,</span><span class="nb">Map</span><span class="p">,</span><span class="w"> </span><span class="nx">MapView</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
@@ -599,6 +599,14 @@
 <li>Print: conecta su aplicación con un servicio de impresión para permitir la impresión del mapa. Aprovecha la funcionalidad de impresión cartográfica completa de alta calidad del lado del servidor mediante el servicio ExportWebMap de ArcGIS, que se puede configurar con plantillas de diseño personalizadas. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Print.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Print.html</a></li>
 <li>Editor: proporciona una experiencia de edición lista para usar para ayudar a optimizar la experiencia de edición dentro de una aplicación web. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html</a></li>
 </ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">scaleBar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ScaleBar</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="nx">view</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="c1">// Agregar widget en la esquina inferior izquierda de la vista</span><span class="w"></span>
+<span class="nx">view</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">scaleBar</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bottom-left&quot;</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</code></pre></div>
 <h2 id="tipos-de-capas">Tipos de capas</h2>
 <h3 id="raster">Raster</h3>
 <ul>
