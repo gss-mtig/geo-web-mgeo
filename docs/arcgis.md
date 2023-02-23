@@ -24,7 +24,7 @@ Crear un archivo llamado arcgis.html y copiar lo siguiente:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
     <style>
         html,
         body,
@@ -36,7 +36,7 @@ Crear un archivo llamado arcgis.html y copiar lo siguiente:
         }
     </style>
     
-    <script src="https://js.arcgis.com/4.22/"></script>
+    <script src="https://js.arcgis.com/4.26/"></script>
     <script>
         require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
 
@@ -83,6 +83,16 @@ https://developers.arcgis.com/javascript/latest/api-reference/
 * ScaleBar: muestra una barra de escala en el mapa o en un nodo HTML especificado. https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html
 * Print: conecta su aplicación con un servicio de impresión para permitir la impresión del mapa. Aprovecha la funcionalidad de impresión cartográfica completa de alta calidad del lado del servidor mediante el servicio ExportWebMap de ArcGIS, que se puede configurar con plantillas de diseño personalizadas. https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Print.html
 * Editor: proporciona una experiencia de edición lista para usar para ayudar a optimizar la experiencia de edición dentro de una aplicación web. https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html
+
+```js
+let scaleBar = new ScaleBar({
+    view: view
+});
+// Agregar widget en la esquina inferior izquierda de la vista
+view.ui.add(scaleBar, {
+    position: "bottom-left"
+});
+```
 
 ## Tipos de capas
 
