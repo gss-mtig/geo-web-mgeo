@@ -12,14 +12,14 @@
         <meta name="author" content="geo-web-mgeo">
       
       
-        <link rel="canonical" href="https://gss-mtig.github.io/geo-web-mgeo/mapbox/">
+        <link rel="canonical" href="https://gss-mtig.github.io/geo-web-mgeo/maplibre/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.8">
     
     
       
-        <title>Mapbox GL (mapLibre) - Programació de geoaplicacions web</title>
+        <title>MapLibre GL JS (Mapbox GL) - Programació de geoaplicacions web</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mapbox-maplibre" class="md-skip">
+        <a href="#maplibre-gl-js-mapbox-gl" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mapbox GL (mapLibre)
+              MapLibre GL JS (Mapbox GL)
             
           </span>
         </div>
@@ -311,12 +311,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Mapbox GL (mapLibre)
+          MapLibre GL JS (Mapbox GL)
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Mapbox GL (mapLibre)
+        MapLibre GL JS (Mapbox GL)
       </a>
       
         
@@ -684,14 +684,14 @@
                 
                   
 
-  <a href="https://github.com/gss-mtig/geo-web-mgeo/edit/master/docs/mapbox.md" title="Editar esta página" class="md-content__button md-icon">
+  <a href="https://github.com/gss-mtig/geo-web-mgeo/edit/master/docs/maplibre.md" title="Editar esta página" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="mapbox-maplibre">Mapbox (maplibre)</h1>
-<p><strong>Mapbox GL JS</strong> es una librería de JavaScript que utiliza WebGL para representar mapas interactivos a partir de mosaicos vectoriales y estilos Mapbox. Es parte del ecosistema Mapbox GL. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<h1 id="maplibre-gl-js-mapbox-gl">MapLibre GL JS (Mapbox GL)</h1>
+<p><strong>MapLibre GL JS</strong> es una librería de JavaScript que utiliza WebGL para representar mapas interactivos a partir de mosaicos vectoriales y estilos MapLibre. Es parte del ecosistema MapLibre GL. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>En diciembre de 2020 Mapbox lanza la versión 2 de la librería y cambia la licencia y las condiciones de uso (Ahora es necesario tener un token de Mapbox para que funcione). Hasta la versión 1.13 la librería tiene una licencia BSD y se puede usar sin un token de Mapbox </p>
@@ -741,7 +741,8 @@
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Maplibre<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.skypack.dev/maplibre-gl/dist/maplibre-gl.css&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css&#39;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#39;stylesheet&#39;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
 <span class="w">        </span><span class="p">#</span><span class="nn">map</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span><span class="w"></span>
@@ -754,10 +755,8 @@
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">        </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Map</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;https://cdn.skypack.dev/maplibre-gl&#39;</span><span class="w"></span>
-
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">({</span><span class="w"></span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">maplibregl</span><span class="p">.</span><span class="nb">Map</span><span class="p">({</span><span class="w"></span>
 <span class="w">            </span><span class="nx">container</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;map&#39;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://geoserveis.icgc.cat/contextmaps/icgc.json&#39;</span><span class="p">,</span><span class="w">                </span>
 <span class="w">            </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.16859</span><span class="p">,</span><span class="w"> </span><span class="mf">41.3954</span><span class="p">],</span><span class="w"></span>
@@ -804,7 +803,7 @@
 <h4 id="sources">Sources</h4>
 <p>Objeto que define los orígenes de los datos.</p>
 <p>Una fuente (<strong>source</strong>) indica qué datos debe mostrar el mapa. Se debe especifique el tipo de fuente con la propiedad "type". Lo tipos de fuentes deben ser: vector, raster, raster-dem, geojson, image, video.</p>
-<p><a href="https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/">https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/</a></p>
+<p><a href="https://maplibre.org/maplibre-gl-js-docs/style-spec/sources/">https://maplibre.org/maplibre-gl-js-docs/style-spec/sources/</a></p>
 <p>Ejemplo </p>
 <div class="highlight"><pre><span></span><code><span class="nt">&quot;sources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;openmaptiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -824,7 +823,7 @@
 </code></pre></div>
 <h4 id="layers">Layers</h4>
 <p>Matriz que contiene las reglas de simbolización. El orden dentro de la matriz es importante ya que la forma en que se van dibujando, hace que la primera regla quede por debajo del todo y la última regla quede por encima del todo. De esta manera, la primera regla suele ser el color de fondo del mapa, y las últimas suelen ser la toponimia o los PoIs. El tipo de capa se especifica mediante la propiedad "type" y debe ser de fbackground, fill, line, symbol, raster, circle, fill-extrusion, heatmap, hillshade, sky.</p>
-<p><a href="https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/">https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/</a></p>
+<p><a href="https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/">https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/</a></p>
 <p>Ejemplo</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&quot;layers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
@@ -960,7 +959,7 @@
 <p>Las expresiones se representan como matrices JSON. El primer elemento de una matriz de expresión es una cadena que nombra al operador de expresión, por ejemplo, "*" o "caso". Los elementos que siguen (si los hay) son los argumentos de la expresión. Cada argumento es un valor literal (una cadena, un número, booleano o nulo) u otra matriz de expresión.</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="err">expressio</span><span class="kc">n</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">,</span><span class="w"> </span><span class="err">argume</span><span class="kc">nt</span><span class="err">_</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="err">argume</span><span class="kc">nt</span><span class="err">_</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
-<p><a href="https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/">https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/</a></p>
+<p><a href="https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/">https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/</a></p>
 <p>Ejemplo</p>
 <div class="highlight"><pre><span></span><code><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">({</span><span class="w"></span>
 <span class="w">    </span><span class="s1">&#39;id&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;municipis&#39;</span><span class="p">,</span><span class="w"></span>
@@ -1160,10 +1159,8 @@
 <h2 id="eventos">Eventos</h2>
 <h3 id="click">click</h3>
 <p>Opcionalmente se puede indicar el id de la capa en la que se quiere capturar el evento. Si no se especifica es en todo el mapa.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Map</span><span class="p">,</span><span class="w"> </span><span class="nx">Popup</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;https://cdn.skypack.dev/maplibre-gl&#39;</span><span class="p">;</span><span class="w"></span>
-
-<span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;municipis&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="ow">new</span><span class="w"> </span><span class="nx">Popup</span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;municipis&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="ow">new</span><span class="w"> </span><span class="nx">maplibregl</span><span class="p">.</span><span class="nx">Popup</span><span class="p">()</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">setLngLat</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">lngLat</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">setHTML</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">properties</span><span class="p">.</span><span class="nx">nomn_muni</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
@@ -1278,13 +1275,13 @@
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://docs.mapbox.com/mapbox-gl-js/api/">https://docs.mapbox.com/mapbox-gl-js/api/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://maplibre.org/maplibre-gl-js-docs/api/">https://maplibre.org/maplibre-gl-js-docs/api/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://github.com/maplibre/maplibre-gl-js">https://github.com/maplibre/maplibre-gl-js</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://maplibre.org/maplibre-gl-js-docs/api/">https://maplibre.org/maplibre-gl-js-docs/api/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://docs.mapbox.com/mapbox-gl-js/style-spec/">https://docs.mapbox.com/mapbox-gl-js/style-spec/</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><a href="https://maplibre.org/maplibre-gl-js-docs/style-spec/">https://maplibre.org/maplibre-gl-js-docs/style-spec/</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
 <p><a href="https://docs.mapbox.com/help/glossary/sprite/">https://docs.mapbox.com/help/glossary/sprite/</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
