@@ -23,7 +23,7 @@ nav:
 - OpenLayers: openLayers.md
 - Leaflet: leaflet.md
 - Turf: turf.md
-- Mapbox GL (mapLibre): mapbox.md
+- MapLibre GL JS (Mapbox GL): maplibre.md
 
 plugins:
     - search

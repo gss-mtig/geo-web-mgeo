@@ -1,6 +1,6 @@
-# Mapbox (maplibre)
+# MapLibre GL JS (Mapbox GL)
 
-**Mapbox GL JS** es una librería de JavaScript que utiliza WebGL para representar mapas interactivos a partir de mosaicos vectoriales y estilos Mapbox. Es parte del ecosistema Mapbox GL. [^1]
+**MapLibre GL JS** es una librería de JavaScript que utiliza WebGL para representar mapas interactivos a partir de mosaicos vectoriales y estilos MapLibre. Es parte del ecosistema MapLibre GL. [^1]
 
 !!! warning
     En diciembre de 2020 Mapbox lanza la versión 2 de la librería y cambia la licencia y las condiciones de uso (Ahora es necesario tener un token de Mapbox para que funcione). Hasta la versión 1.13 la librería tiene una licencia BSD y se puede usar sin un token de Mapbox 
@@ -56,7 +56,8 @@ Ejemplo con MapLibre
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maplibre</title>
-    <link rel="stylesheet" href="https://cdn.skypack.dev/maplibre-gl/dist/maplibre-gl.css" />
+    <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
+    <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
     <style>
         #map {
             position: absolute;
@@ -69,10 +70,8 @@ Ejemplo con MapLibre
 <body>
     <div id="map"></div>
 
-    <script type="module">
-        import { Map } from 'https://cdn.skypack.dev/maplibre-gl'
-
-        const map = new Map({
+    <script>
+        const map = new maplibregl.Map({
             container: 'map',
             style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',                
             center: [2.16859, 41.3954],
@@ -142,7 +141,7 @@ Objeto que define los orígenes de los datos.
 
 Una fuente (**source**) indica qué datos debe mostrar el mapa. Se debe especifique el tipo de fuente con la propiedad "type". Lo tipos de fuentes deben ser: vector, raster, raster-dem, geojson, image, video.
 
-https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/
+https://maplibre.org/maplibre-gl-js-docs/style-spec/sources/
 
 Ejemplo 
 
@@ -168,7 +167,7 @@ Ejemplo
 
 Matriz que contiene las reglas de simbolización. El orden dentro de la matriz es importante ya que la forma en que se van dibujando, hace que la primera regla quede por debajo del todo y la última regla quede por encima del todo. De esta manera, la primera regla suele ser el color de fondo del mapa, y las últimas suelen ser la toponimia o los PoIs. El tipo de capa se especifica mediante la propiedad "type" y debe ser de fbackground, fill, line, symbol, raster, circle, fill-extrusion, heatmap, hillshade, sky.
 
-https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/
+https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/
 
 Ejemplo
 
@@ -338,7 +337,7 @@ Las expresiones se representan como matrices JSON. El primer elemento de una mat
 [expression_name, argument_0, argument_1, ...]
 ```
 
-https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/
+https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/
 
 Ejemplo
 
@@ -577,10 +576,8 @@ function cargarDatos() {
 Opcionalmente se puede indicar el id de la capa en la que se quiere capturar el evento. Si no se especifica es en todo el mapa.
 
 ``` js
-import { Map, Popup } from 'https://cdn.skypack.dev/maplibre-gl';
-
 map.on('click', 'municipis', function (e) {
-    new Popup()
+    new maplibregl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(e.features[0].properties.nomn_muni)
     .addTo(map);
@@ -709,7 +706,7 @@ Tutorial más completo: https://geoinquiets.github.io/taller-vt/
 
 ## Referencias
 
-[^1]: https://docs.mapbox.com/mapbox-gl-js/api/
-[^2]: https://github.com/maplibre/maplibre-gl-js
-[^3]: https://docs.mapbox.com/mapbox-gl-js/style-spec/
+[^1]: https://maplibre.org/maplibre-gl-js-docs/api/
+[^2]: https://maplibre.org/maplibre-gl-js-docs/api/
+[^3]: https://maplibre.org/maplibre-gl-js-docs/style-spec/
 [^4]: https://docs.mapbox.com/help/glossary/sprite/
