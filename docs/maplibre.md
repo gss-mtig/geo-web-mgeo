@@ -7,47 +7,6 @@
 
 Debido al cambio de licencia parte de la comunidad lanza **MapLibre GL JS** [^2] que es un fork de Mapbox GL JS en su versión 1.13
 
-Ejemplo con Mapbox
-
-``` html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapbox</title>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.css' rel='stylesheet' />
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js'></script>
-    <style>
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <div id="map"></div>
-
-    <script>
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',                
-            center: [2.16859, 41.3954],
-            zoom: 13,
-            maxZoom: 14,
-            hash: true,
-            pitch: 45
-        });
-    </script>
-</body>
-</html>
-```
-
-Ejemplo con MapLibre
-
 ``` html
 <!DOCTYPE html>
 <html lang="en">
@@ -56,8 +15,8 @@ Ejemplo con MapLibre
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maplibre</title>
-    <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
-    <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl/dist/maplibre-gl.css' rel='stylesheet' />
+    <script src='https://unpkg.com/maplibre-gl/dist/maplibre-gl.js'></script>
     <style>
         #map {
             position: absolute;
@@ -92,7 +51,7 @@ Un estilo Mapbox es un documento que define la apariencia visual de un mapa: qu�
 
 
 !!! note
-    Al declara un mapa no es necesario declara el estilo
+    Al declarar un mapa no es necesario declarar el estilo
 
 ### Raíz (elementos del primer nivel)
 
@@ -697,6 +656,10 @@ map.on('mouseleave', 'municipis', function () {
     map.setFilter('municipis-highlighted', ['in', 'comarca', '']);
 });
 ```
+
+!!! question "Ejercicio 2.5 pts"
+    1. Preparar un mapa interactivo de coropletas. Replicar el resultado final de este tutorial de Leaflet https://leafletjs.com/examples/choropleth/ pero usando MapLibre. **(2.5 pt)**
+
 
 ## Más recursos
 

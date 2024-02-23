@@ -12,14 +12,14 @@ Crear un archivo llamado openlayers.html y copiar lo siguiente:
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@7.2.2/ol.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@8.2.0/ol.min.css" type="text/css">
     <style>
       .map {
         height: 600px;
         width: 100%;
       }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/ol@7.2.2/dist/ol.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@8.2.0/dist/ol.min.js"></script>
     <title>Ejemplo OpenLayers</title>
   </head>
   <body>
@@ -239,12 +239,15 @@ Podéis ver más ejemplos de código en https://openlayers.org/en/latest/example
 
 También podéis ver un worlshop con ejemplos en https://openlayers.org/workshop/en/
 
-!!! question "Ejercicio 2.5 pts"
-    1. Preparar un mapa con la capa de OpenStreetMap centrada en Catalunya. **(0.5 pt)**
-    2. Agregar al mapa el servicio WMS del ICGC de la ortofoto 25c. **(0.5 pt)**
-    3. Añadir el control fullscreen **(0.5 pt)**
+!!! question "Ejercicio 1 pts"
+    1. Preparar un mapa con la capa de OpenStreetMap centrada en Catalunya.
+    2. Agregar al mapa el servicio WMS del ICGC de la ortofoto 25c.
+    3. Añadir el control fullscreen
     4. Añadir los municipios de Catalunya en formato geojson. (https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG4326.geojson) **(0.5 pt)**
-    5. Agregar el control de capas (https://github.com/walkermatt/ol-layerswitcher) **(0.5 pt)**
+
+    Realizar los 3 primeros puntos anterios son **(0.5 pt)** en el caso contrario 0 pt.
+    
+    El punto 4 son **(0.5 pt)**
 
 ## Referencias
 

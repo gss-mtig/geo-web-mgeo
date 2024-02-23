@@ -24,7 +24,7 @@ Crear un archivo llamado arcgis.html y copiar lo siguiente:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
     <style>
         html,
         body,
@@ -36,14 +36,14 @@ Crear un archivo llamado arcgis.html y copiar lo siguiente:
         }
     </style>
     
-    <script src="https://js.arcgis.com/4.26/"></script>
+    <script src="https://js.arcgis.com/4.28/"></script>
     <script>
         require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
 
             esriConfig.apiKey = "YOUR_API_KEY";
 
             const map = new Map({
-                basemap: "arcgis-topographic" // Basemap layer service
+                basemap: "topo-vector" // Basemap layer service
             });
 
             const view = new MapView({
@@ -118,10 +118,12 @@ view.ui.add(scaleBar, {
 
 Podéis ver más ejemplos de código en https://developers.arcgis.com/javascript/latest/sample-code/ 
 
-!!! question "Ejercicio 1.5 pts"
-    1. Preparar un mapa con la capa Osm centrada en España. Referencia de las capas base: https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap **(0.5 pt)**
-    2. Sobre el ejercicio anterior añadir el widget toggleMap para cambiar entre la capa Osm y la capa satellite. **(0.5 pt)**
-    3. Añadir servicio WMS del ICGC de la ortofoto de 25c. **(0.5 pt)**
+!!! question "Ejercicio 0.5 pts"
+    1. Preparar un mapa con la capa Osm centrada en España. Referencia de las capas base: https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap
+    2. Sobre el ejercicio anterior añadir el widget toggleMap para cambiar entre la capa Osm y la capa satellite.
+    3. Añadir servicio WMS del ICGC de la ortofoto de 25c. 
+    
+    Realizar los 3 puntos anterios son **(0.5 pt)** en el caso contrario 0 pt.
 
 ## Referencias
 

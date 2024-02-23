@@ -14,9 +14,9 @@ Ejemplo
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@turf/turf@6/turf.min.js" crossorigin="anonymous"></script>
    
@@ -107,7 +107,7 @@ Ejemplo
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors'
         }).addTo(map);
 
-        const satelite = L.tileLayer('https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=dr1MVIVb840BbU3dGpV8',{
+        const satelite = L.tileLayer('https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=YOUR_MAPTILER_API_KEY',{
           tileSize: 512,
           zoomOffset: -1,
           minZoom: 1,
@@ -159,119 +159,119 @@ Ejemplo
 
         const est = [
           {
-            id: "avh",
-            nom: "Adrián Vandellos Hita",
+            id: "1",
+            nom: "Puig Mora, Antoni",
             icon: "abduction",
             score: 0
           },
           {
-            id: "agr",
-            nom: "Albert Gaitan Roca",
+            id: "2",
+            nom: "Zaldua Antolinez, Carlos Eduardo",
             icon: "alien",
             score: 0
           },
           {
-            id: "aad",
-            nom: "Alvaro Aibar Delgado",
+            id: "3",
+            nom: "Durà Lahoz, Cristina",
             icon: "anon",
             score: 0
           },
           {
-            id: "axv",
-            nom: "Arnau Xerta Velasco",
+            id: "4",
+            nom: "García Zárate, Diego",
             icon: "avalanche1",
             score: 0
           },
           {
-            id: "cpp",
-            nom: "Carles Puyol i Palacin",
+            id: "5",
+            nom: "Roselló Boada, Eva",
             icon: "battlefield",
             score: 0
           },
           {
-            id: "ccc",
-            nom: "Carles Cuadras Casanovas",
+            id: "6",
+            nom: "Bueno Tricas, Gerard",
             icon: "blast",
             score: 0
           },
           {
-            id: "epm",
-            nom: "Eric Padrós Martínez",
+            id: "7",
+            nom: "Colàs Bajo, Marta",
             icon: "bomb",
             score: 0
           },
           {
-            id: "gvs",
-            nom: "Guillem Viñas Salvador",
+            id: "8",
+            nom: "Morales Rodriguez, Nicole",
             icon: "caraccident",
             score: 0
           },
           {
-            id: "jfpg",
-            nom: "Javier Francisco Pérez Gómez",
+            id: "9",
+            nom: "Timoner Alfageme, Paula",
             icon: "cowabduction",
             score: 0
           },
           {
-            id: "jpr",
-            nom: "Jordi Pallàs del Río",
+            id: "10",
+            nom: "Enguialle, Pierre",
             icon: "crimescene",
             score: 0
           },
           {
-            id: "jbl",
-            nom: "Jordi Barniol Llurda",
+            id: "11",
+            nom: "Rubí Perales, Pol",
             icon: "earthquake-3",
             score: 0
           },
           {
-            id: "mmp",
-            nom: "Manuel Mateo Pallares",
+            id: "12",
+            nom: "García Gómez, Rodrigo",
             icon: "fire",
             score: 0
           },
           {
-            id: "mpb",
-            nom: "Martin Pedroso Baena",
+            id: "13",
+            nom: "Vintimilla Cruz, Tito Santiago",
             icon: "flood",
             score: 0
           },
           {
-            id: "mnf",
+            id: "14",
             nom: "Miguel Novillo Fernandez",
             icon: "love_date",
             score: 0
           },
           {
-            id: "oc",
-            nom: "Olivier Curdy",
+            id: "15",
+            nom: "Wang, Wenyu",
             icon: "peace",
             score: 0
           },
           {
-            id: "pifg",
-            nom: "Patricia Isabel Fernandez Gutierrez",
+            id: "16",
+            nom: "Lyu, Xinyu",
             icon: "phantom",
             score: 0
-          },
+          }/*,
           {
-            id: "rcf",
-            nom: "Raúl Cruz Fernández",
+            id: "17",
+            nom: "",
             icon: "pirates",
             score: 0
           },
           {
-            id: "rbs",
-            nom: "Raúl Bravo Sánchez",
+            id: "18",
+            nom: "",
             icon: "planecrash",
             score: 0
           },
           {
-            id: "xl",
-            nom: "Xinmiao Liang",
+            id: "19",
+            nom: "",
             icon: "radiation",
             score: 0
-          }
+          }*/
         ];
 
         const iconBaseUrl = "http://betaserver.icgc.cat/mapicons/";

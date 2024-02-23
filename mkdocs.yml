@@ -6,6 +6,8 @@ theme:
   name: 'material'
   language: 'es'
   highlightjs: true
+  features:
+    - content.code.copy
 
 markdown_extensions:
   - codehilite:
@@ -21,8 +23,8 @@ nav:
 - Google Maps JavaScript API: google.md
 - ArcGIS API for Javascript: arcgis.md
 - OpenLayers: openLayers.md
-- Leaflet: leaflet.md
 - Turf: turf.md
+- Leaflet: leaflet.md
 - MapLibre GL JS (Mapbox GL): maplibre.md
 
 plugins:
