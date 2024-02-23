@@ -14,8 +14,15 @@
       
         <link rel="canonical" href="https://gss-mtig.github.io/geo-web-mgeo/openLayers/">
       
+      
+        <link rel="prev" href="../arcgis/">
+      
+      
+        <link rel="next" href="../turf/">
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
     
     
       
@@ -23,15 +30,14 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.815d1a91.min.css">
-        
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
       
       
 
+
     
+    
+      
     
     
       
@@ -53,14 +59,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -80,7 +83,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href=".." title="Programació de geoaplicacions web" class="md-header__button md-logo" aria-label="Programació de geoaplicacions web" data-md-component="logo">
       
@@ -89,6 +94,7 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
+      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
@@ -111,6 +117,7 @@
     
     
       <label class="md-header__button md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -119,12 +126,15 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
         <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -136,7 +146,7 @@
           <div class="md-search-result__meta">
             Inicializando búsqueda
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -148,7 +158,7 @@
         <a href="https://github.com/gss-mtig/geo-web-mgeo" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -178,6 +188,7 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Programació de geoaplicacions web" class="md-nav__button md-logo" aria-label="Programació de geoaplicacions web" data-md-component="logo">
@@ -193,7 +204,7 @@
       <a href="https://github.com/gss-mtig/geo-web-mgeo" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -205,14 +216,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -220,14 +235,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../google/" class="md-nav__link">
-        Google Maps JavaScript API
+        
+  
+  <span class="md-ellipsis">
+    Google Maps JavaScript API
+  </span>
+  
+
       </a>
     </li>
   
@@ -235,14 +254,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../arcgis/" class="md-nav__link">
-        ArcGIS API for Javascript
+        
+  
+  <span class="md-ellipsis">
+    ArcGIS API for Javascript
+  </span>
+  
+
       </a>
     </li>
   
@@ -250,8 +273,6 @@
     
       
       
-      
-
   
   
     
@@ -259,19 +280,31 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          OpenLayers
+          
+  
+  <span class="md-ellipsis">
+    OpenLayers
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        OpenLayers
+        
+  
+  <span class="md-ellipsis">
+    OpenLayers
+  </span>
+  
+
       </a>
       
         
@@ -291,14 +324,18 @@
       
         <li class="md-nav__item">
   <a href="#mi-primer-mapa" class="md-nav__link">
-    Mi primer mapa
+    <span class="md-ellipsis">
+      Mi primer mapa
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#principales-objetos" class="md-nav__link">
-    Principales objetos
+    <span class="md-ellipsis">
+      Principales objetos
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Principales objetos">
@@ -306,21 +343,27 @@
         
           <li class="md-nav__item">
   <a href="#el-mapa-y-la-vista" class="md-nav__link">
-    El mapa y la vista
+    <span class="md-ellipsis">
+      El mapa y la vista
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#controles" class="md-nav__link">
-    Controles
+    <span class="md-ellipsis">
+      Controles
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#diferentes-tipos-de-capas-y-sus-origenes" class="md-nav__link">
-    Diferentes tipos de capas y sus origenes
+    <span class="md-ellipsis">
+      Diferentes tipos de capas y sus origenes
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Diferentes tipos de capas y sus origenes">
@@ -328,14 +371,18 @@
         
           <li class="md-nav__item">
   <a href="#wms" class="md-nav__link">
-    WMS
+    <span class="md-ellipsis">
+      WMS
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#geojson" class="md-nav__link">
-    GeoJSON
+    <span class="md-ellipsis">
+      GeoJSON
+    </span>
   </a>
   
 </li>
@@ -347,7 +394,9 @@
         
           <li class="md-nav__item">
   <a href="#proyecciones" class="md-nav__link">
-    Proyecciones
+    <span class="md-ellipsis">
+      Proyecciones
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Proyecciones">
@@ -355,14 +404,18 @@
         
           <li class="md-nav__item">
   <a href="#reproyeccion-raster" class="md-nav__link">
-    Reproyección Raster
+    <span class="md-ellipsis">
+      Reproyección Raster
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#reproyeccion-vector" class="md-nav__link">
-    Reproyeccion Vector
+    <span class="md-ellipsis">
+      Reproyeccion Vector
+    </span>
   </a>
   
 </li>
@@ -379,14 +432,18 @@
       
         <li class="md-nav__item">
   <a href="#ejemplos" class="md-nav__link">
-    Ejemplos
+    <span class="md-ellipsis">
+      Ejemplos
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#referencias" class="md-nav__link">
-    Referencias
+    <span class="md-ellipsis">
+      Referencias
+    </span>
   </a>
   
 </li>
@@ -401,29 +458,18 @@
     
       
       
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../leaflet/" class="md-nav__link">
-        Leaflet
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../turf/" class="md-nav__link">
-        Turf
+        
+  
+  <span class="md-ellipsis">
+    Turf
+  </span>
+  
+
       </a>
     </li>
   
@@ -431,14 +477,37 @@
     
       
       
-      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaflet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaflet
+  </span>
+  
 
+      </a>
+    </li>
+  
+
+    
+      
+      
   
   
   
     <li class="md-nav__item">
       <a href="../maplibre/" class="md-nav__link">
-        MapLibre GL JS (Mapbox GL)
+        
+  
+  <span class="md-ellipsis">
+    MapLibre GL JS (Mapbox GL)
+  </span>
+  
+
       </a>
     </li>
   
@@ -472,14 +541,18 @@
       
         <li class="md-nav__item">
   <a href="#mi-primer-mapa" class="md-nav__link">
-    Mi primer mapa
+    <span class="md-ellipsis">
+      Mi primer mapa
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#principales-objetos" class="md-nav__link">
-    Principales objetos
+    <span class="md-ellipsis">
+      Principales objetos
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Principales objetos">
@@ -487,21 +560,27 @@
         
           <li class="md-nav__item">
   <a href="#el-mapa-y-la-vista" class="md-nav__link">
-    El mapa y la vista
+    <span class="md-ellipsis">
+      El mapa y la vista
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#controles" class="md-nav__link">
-    Controles
+    <span class="md-ellipsis">
+      Controles
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#diferentes-tipos-de-capas-y-sus-origenes" class="md-nav__link">
-    Diferentes tipos de capas y sus origenes
+    <span class="md-ellipsis">
+      Diferentes tipos de capas y sus origenes
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Diferentes tipos de capas y sus origenes">
@@ -509,14 +588,18 @@
         
           <li class="md-nav__item">
   <a href="#wms" class="md-nav__link">
-    WMS
+    <span class="md-ellipsis">
+      WMS
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#geojson" class="md-nav__link">
-    GeoJSON
+    <span class="md-ellipsis">
+      GeoJSON
+    </span>
   </a>
   
 </li>
@@ -528,7 +611,9 @@
         
           <li class="md-nav__item">
   <a href="#proyecciones" class="md-nav__link">
-    Proyecciones
+    <span class="md-ellipsis">
+      Proyecciones
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Proyecciones">
@@ -536,14 +621,18 @@
         
           <li class="md-nav__item">
   <a href="#reproyeccion-raster" class="md-nav__link">
-    Reproyección Raster
+    <span class="md-ellipsis">
+      Reproyección Raster
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#reproyeccion-vector" class="md-nav__link">
-    Reproyeccion Vector
+    <span class="md-ellipsis">
+      Reproyeccion Vector
+    </span>
   </a>
   
 </li>
@@ -560,14 +649,18 @@
       
         <li class="md-nav__item">
   <a href="#ejemplos" class="md-nav__link">
-    Ejemplos
+    <span class="md-ellipsis">
+      Ejemplos
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#referencias" class="md-nav__link">
-    Referencias
+    <span class="md-ellipsis">
+      Referencias
+    </span>
   </a>
   
 </li>
@@ -586,10 +679,8 @@
                 
                   
 
-  <a href="https://github.com/gss-mtig/geo-web-mgeo/edit/master/docs/openLayers.md" title="Editar esta página" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
 <h1 id="openlayers">OpenLayers</h1>
@@ -600,32 +691,32 @@
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/ol@7.2.2/ol.min.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="p">.</span><span class="nc">map</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/ol@8.2.0/ol.min.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">.</span><span class="nc">map</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/ol@7.2.2/dist/ol.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/ol@8.2.0/dist/ol.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo OpenLayers<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Mi primer mapa<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nb">Map</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;map&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">          </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span><span class="w"></span>
-<span class="w">            </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">()</span><span class="w"></span>
-<span class="w">          </span><span class="p">})</span><span class="w"></span>
-<span class="w">        </span><span class="p">],</span><span class="w"></span>
-<span class="w">        </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">({</span><span class="w"></span>
-<span class="w">          </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">fromLonLat</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">45.1</span><span class="p">]),</span><span class="w"></span>
-<span class="w">          </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">9</span><span class="w"></span>
-<span class="w">        </span><span class="p">})</span><span class="w"></span>
-<span class="w">      </span><span class="p">});</span><span class="w"></span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nb">Map</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;map&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">()</span>
+<span class="w">          </span><span class="p">})</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">({</span>
+<span class="w">          </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">fromLonLat</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">45.1</span><span class="p">]),</span>
+<span class="w">          </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">9</span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">      </span><span class="p">});</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -650,18 +741,18 @@
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nb">Map</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span><span class="w"> </span>
 </code></pre></div>
 <p><em>options</em> son las opciones de configuración del mapa en forma de pares de claves y valores separados por comas. Por ejemplo</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">View</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"></span>
-<span class="w">  </span><span class="p">}),</span><span class="w"></span>
-<span class="w">  </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="ow">new</span><span class="w"> </span><span class="nx">TileLayer</span><span class="p">({</span><span class="w"></span>
-<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OSM</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">  </span><span class="p">],</span><span class="w"></span>
-<span class="w">  </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;map&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">View</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">  </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="ow">new</span><span class="w"> </span><span class="nx">TileLayer</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OSM</span><span class="p">()</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;map&#39;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p><strong>ol/View</strong> representa una vista simple 2D del mapa. El mapa no es responsable de cosas como el centro, el nivel de zoom y la proyección del mapa. En cambio, estas son propiedades de una instancia ol/View. </p>
 <p>Para crear una vista</p>
@@ -723,24 +814,24 @@
 <h4 id="wms">WMS</h4>
 <p>Podemos hacer peticiones a servicios WMS como una imagen simple usando <em>ImageLayer</em> como haciendo peticiones teseladas usando <em>TileLayer</em></p>
 <p>Ejemplo WMS teselado</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">inundacion500Teselada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">TileWMS</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="s1">&#39;https://servicios.idee.es/wms-inspire/riesgos-naturales/inundaciones?&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NZ.Flood.FluvialT500&#39;</span><span class="p">,</span><span class="s1">&#39;FORMAT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span><span class="s1">&#39;TRANSPARENT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">inundacion500Teselada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">TileWMS</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="s1">&#39;https://servicios.idee.es/wms-inspire/riesgos-naturales/inundaciones?&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NZ.Flood.FluvialT500&#39;</span><span class="p">,</span><span class="s1">&#39;FORMAT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span><span class="s1">&#39;TRANSPARENT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="p">});</span>
 
-<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">inundacion500Teselada</span><span class="p">);</span><span class="w"></span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">inundacion500Teselada</span><span class="p">);</span>
 </code></pre></div>
 <p>Ejemplo WMS imagen simple</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">inundacion500Simple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="s1">&#39;https://servicios.idee.es/wms-inspire/riesgos-naturales/inundaciones?&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NZ.Flood.FluvialT500&#39;</span><span class="p">,</span><span class="s1">&#39;FORMAT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span><span class="s1">&#39;TRANSPARENT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">inundacion500Simple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="s1">&#39;https://servicios.idee.es/wms-inspire/riesgos-naturales/inundaciones?&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NZ.Flood.FluvialT500&#39;</span><span class="p">,</span><span class="s1">&#39;FORMAT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span><span class="s1">&#39;TRANSPARENT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="p">});</span>
 
-<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">inundacion500Simple</span><span class="p">);</span><span class="w"></span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">inundacion500Simple</span><span class="p">);</span>
 </code></pre></div>
 <h4 id="geojson">GeoJSON</h4>
 <p>Los tres ingredientes importantes para trabajar con datos vectoriales:</p>
@@ -750,26 +841,26 @@
 <li>Una capa vectorial para representar las entidades en el mapa (<strong>ol.layer.Vector</strong>)</li>
 </ul>
 <p>Ejemplo de cargar de GeoJSON desde una URL.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">vectorSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/geostarters/dades/master/fulls50M.geojson&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">()</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">vectorSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/geostarters/dades/master/fulls50M.geojson&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">()</span>
+<span class="p">});</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">vectorLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="nx">vectorSource</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Style</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stroke</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Stroke</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">lineDash</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">4</span><span class="p">],</span><span class="w"></span>
-<span class="w">        </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="p">}),</span><span class="w"></span>
-<span class="w">        </span><span class="nx">fill</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Fill</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgba(0, 0, 255, 0.1)&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="p">}),</span><span class="w"></span>
-<span class="w">    </span><span class="p">}),</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">vectorLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="nx">vectorSource</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Style</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">stroke</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Stroke</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">lineDash</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">4</span><span class="p">],</span>
+<span class="w">        </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">        </span><span class="p">}),</span>
+<span class="w">        </span><span class="nx">fill</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Fill</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgba(0, 0, 255, 0.1)&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">}),</span>
+<span class="w">    </span><span class="p">}),</span>
+<span class="p">});</span>
 
-<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">vectorLayer</span><span class="p">);</span><span class="w"></span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">vectorLayer</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="proyecciones">Proyecciones</h3>
 <p>OpenLayers permite hacer reproyecciones tanto de capas vectoriales como de capas ráster en el navegador. Esto es una gran ventaja ya que la tranformación de capas ráster en el cliente (navegador) permite consumir servicios en SRS que inicialmente no están soportados por el proveedor del servicio. Se puede decir que esta capacidad es un punto fuerte que lo diferencia de otras librerías de mapas.</p>
@@ -784,14 +875,15 @@
 <p>Podéis ver más ejemplos de código en <a href="https://openlayers.org/en/latest/examples/">https://openlayers.org/en/latest/examples/</a></p>
 <p>También podéis ver un worlshop con ejemplos en <a href="https://openlayers.org/workshop/en/">https://openlayers.org/workshop/en/</a></p>
 <div class="admonition question">
-<p class="admonition-title">Ejercicio 2.5 pts</p>
+<p class="admonition-title">Ejercicio 1 pts</p>
 <ol>
-<li>Preparar un mapa con la capa de OpenStreetMap centrada en Catalunya. <strong>(0.5 pt)</strong></li>
-<li>Agregar al mapa el servicio WMS del ICGC de la ortofoto 25c. <strong>(0.5 pt)</strong></li>
-<li>Añadir el control fullscreen <strong>(0.5 pt)</strong></li>
+<li>Preparar un mapa con la capa de OpenStreetMap centrada en Catalunya.</li>
+<li>Agregar al mapa el servicio WMS del ICGC de la ortofoto 25c.</li>
+<li>Añadir el control fullscreen</li>
 <li>Añadir los municipios de Catalunya en formato geojson. (<a href="https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG4326.geojson">https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG4326.geojson</a>) <strong>(0.5 pt)</strong></li>
-<li>Agregar el control de capas (<a href="https://github.com/walkermatt/ol-layerswitcher">https://github.com/walkermatt/ol-layerswitcher</a>) <strong>(0.5 pt)</strong></li>
 </ol>
+<p>Realizar los 3 primeros puntos anterios son <strong>(0.5 pt)</strong> en el caso contrario 0 pt.</p>
+<p>El punto 4 son <strong>(0.5 pt)</strong></p>
 </div>
 <h2 id="referencias">Referencias</h2>
 <div class="footnote">
@@ -821,42 +913,6 @@
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Pie" >
-      
-        
-        <a href="../arcgis/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: ArcGIS API for Javascript" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Anterior
-              </span>
-              ArcGIS API for Javascript
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../leaflet/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Leaflet" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Siguiente
-              </span>
-              Leaflet
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -878,10 +934,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
     
   </body>

@@ -14,8 +14,15 @@
       
         <link rel="canonical" href="https://gss-mtig.github.io/geo-web-mgeo/turf/">
       
+      
+        <link rel="prev" href="../openLayers/">
+      
+      
+        <link rel="next" href="../leaflet/">
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
     
     
       
@@ -23,15 +30,14 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.815d1a91.min.css">
-        
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
       
       
 
+
     
+    
+      
     
     
       
@@ -53,14 +59,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -80,7 +83,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href=".." title="Programació de geoaplicacions web" class="md-header__button md-logo" aria-label="Programació de geoaplicacions web" data-md-component="logo">
       
@@ -89,6 +94,7 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
+      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
@@ -111,6 +117,7 @@
     
     
       <label class="md-header__button md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -119,12 +126,15 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
         <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -136,7 +146,7 @@
           <div class="md-search-result__meta">
             Inicializando búsqueda
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -148,7 +158,7 @@
         <a href="https://github.com/gss-mtig/geo-web-mgeo" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -178,6 +188,7 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Programació de geoaplicacions web" class="md-nav__button md-logo" aria-label="Programació de geoaplicacions web" data-md-component="logo">
@@ -193,7 +204,7 @@
       <a href="https://github.com/gss-mtig/geo-web-mgeo" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -205,14 +216,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -220,14 +235,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../google/" class="md-nav__link">
-        Google Maps JavaScript API
+        
+  
+  <span class="md-ellipsis">
+    Google Maps JavaScript API
+  </span>
+  
+
       </a>
     </li>
   
@@ -235,14 +254,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../arcgis/" class="md-nav__link">
-        ArcGIS API for Javascript
+        
+  
+  <span class="md-ellipsis">
+    ArcGIS API for Javascript
+  </span>
+  
+
       </a>
     </li>
   
@@ -250,14 +273,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../openLayers/" class="md-nav__link">
-        OpenLayers
+        
+  
+  <span class="md-ellipsis">
+    OpenLayers
+  </span>
+  
+
       </a>
     </li>
   
@@ -265,23 +292,6 @@
     
       
       
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../leaflet/" class="md-nav__link">
-        Leaflet
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
   
   
     
@@ -289,14 +299,20 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Turf
+        
+  
+  <span class="md-ellipsis">
+    Turf
+  </span>
+  
+
       </a>
       
     </li>
@@ -305,14 +321,37 @@
     
       
       
-      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaflet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaflet
+  </span>
+  
 
+      </a>
+    </li>
+  
+
+    
+      
+      
   
   
   
     <li class="md-nav__item">
       <a href="../maplibre/" class="md-nav__link">
-        MapLibre GL JS (Mapbox GL)
+        
+  
+  <span class="md-ellipsis">
+    MapLibre GL JS (Mapbox GL)
+  </span>
+  
+
       </a>
     </li>
   
@@ -350,10 +389,8 @@
                 
                   
 
-  <a href="https://github.com/gss-mtig/geo-web-mgeo/edit/master/docs/turf.md" title="Editar esta página" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
 <h1 id="turfjs">Turf.js</h1>
@@ -367,33 +404,33 @@
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/leaflet@1.7.1/dist/leaflet.css&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/leaflet@1.9.4/dist/leaflet.css&quot;</span> <span class="p">/&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/leaflet@1.7.1/dist/leaflet.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/leaflet@1.9.4/dist/leaflet.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.min.js&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/@turf/turf@6/turf.min.js&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">#</span><span class="nn">map</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">#</span><span class="nn">features</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">right</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="k">z-index</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">map</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">            </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">features</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">            </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">right</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">            </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">);</span>
+<span class="w">            </span><span class="k">z-index</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -412,318 +449,318 @@
       <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;map&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">37.88437176085360</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">4.779524803161621</span><span class="p">],</span><span class="w"> </span><span class="mf">14</span><span class="p">);</span><span class="w"></span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">37.88437176085360</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">4.779524803161621</span><span class="p">],</span><span class="w"> </span><span class="mf">14</span><span class="p">);</span>
 
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">objetivos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pedraforca&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;42.23993;1.70375&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;9/41.7355/2.3703&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Zaragoza&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;41.6570;-0.8621&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8/41.098/-0.176&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Córdoba&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;37.8842;-4.7639&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;7/39.880/-0.956&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Giza Necropolis&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;29.97684;31.13684&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;9/30.1938/31.6187&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Great Wall of China&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;40.4316544;116.56464&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;5/31.747/114.082&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mt Everest&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;28.014503;86.90959&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;6/31.812/92.340&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">objetivos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pedraforca&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;42.23993;1.70375&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;9/41.7355/2.3703&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Zaragoza&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;41.6570;-0.8621&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8/41.098/-0.176&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Córdoba&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;37.8842;-4.7639&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;7/39.880/-0.956&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Giza Necropolis&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;29.97684;31.13684&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;9/30.1938/31.6187&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Great Wall of China&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;40.4316544;116.56464&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;5/31.747/114.082&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mt Everest&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;28.014503;86.90959&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;6/31.812/92.340&quot;</span>
+<span class="w">          </span><span class="p">},</span>
 
-<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span>
 
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;objetivos&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="sb">`&lt;option value=&quot;-----&quot;&gt;Seleccionar objetivo&lt;/option&gt;`</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">objetivos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;option value=&quot;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">pos</span><span class="si">}</span><span class="sb">@</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">view</span><span class="si">}</span><span class="sb">&quot;&gt;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/option&gt;`</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">})].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;objetivos&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="sb">`&lt;option value=&quot;-----&quot;&gt;Seleccionar objetivo&lt;/option&gt;`</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">objetivos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;option value=&quot;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">pos</span><span class="si">}</span><span class="sb">@</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">view</span><span class="si">}</span><span class="sb">&quot;&gt;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/option&gt;`</span><span class="p">;</span>
+<span class="w">        </span><span class="p">})].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
 
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">Hash</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">Hash</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 
-<span class="w">        </span><span class="c1">// Capas base</span><span class="w"></span>
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">osmLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;http://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&amp;copy; &lt;a href=&quot;http://osm.org/copyright&quot;&gt;OpenStreetMap&lt;\/a&gt; contributors&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Capas base</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">osmLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;http://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&amp;copy; &lt;a href=&quot;http://osm.org/copyright&quot;&gt;OpenStreetMap&lt;\/a&gt; contributors&#39;</span>
+<span class="w">        </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">satelite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=dr1MVIVb840BbU3dGpV8&#39;</span><span class="p">,{</span><span class="w"></span>
-<span class="w">          </span><span class="nx">tileSize</span><span class="o">:</span><span class="w"> </span><span class="mf">512</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nx">zoomOffset</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nx">minZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;\u003ca href=\&quot;https://www.maptiler.com/copyright/\&quot; target=\&quot;_blank\&quot;\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot; target=\&quot;_blank\&quot;\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nx">crossOrigin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">        </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">satelite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=YOUR_MAPTILER_API_KEY&#39;</span><span class="p">,{</span>
+<span class="w">          </span><span class="nx">tileSize</span><span class="o">:</span><span class="w"> </span><span class="mf">512</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">zoomOffset</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">minZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;\u003ca href=\&quot;https://www.maptiler.com/copyright/\&quot; target=\&quot;_blank\&quot;\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot; target=\&quot;_blank\&quot;\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">crossOrigin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 
-<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">getColor</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">15</span><span class="w">  </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#cf597e&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
-<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="w">  </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#e88471&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
-<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="w">  </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#eeb479&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
-<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">3</span><span class="w">   </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#e9e29c&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
-<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">2</span><span class="w">   </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#9ccb86&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
-<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1</span><span class="w">   </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#39b185&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
-<span class="w">                      </span><span class="s1">&#39;#009392&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">getColor</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">15</span><span class="w">  </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#cf597e&#39;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="w">  </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#e88471&#39;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="w">  </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#eeb479&#39;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">3</span><span class="w">   </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#e9e29c&#39;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">2</span><span class="w">   </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#9ccb86&#39;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">           </span><span class="nx">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1</span><span class="w">   </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;#39b185&#39;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">                      </span><span class="s1">&#39;#009392&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">gridLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">geoJSON</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span><span class="w"></span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="nx">fillColor</span><span class="o">:</span><span class="w"> </span><span class="nx">getColor</span><span class="p">(</span><span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">count</span><span class="p">),</span><span class="w"></span>
-<span class="w">              </span><span class="nx">weight</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
-<span class="w">              </span><span class="nx">opacity</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">              </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">              </span><span class="nx">dashArray</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">              </span><span class="nx">fillOpacity</span><span class="o">:</span><span class="w"> </span><span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">            </span><span class="p">};</span><span class="w"></span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">gridLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">geoJSON</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">fillColor</span><span class="o">:</span><span class="w"> </span><span class="nx">getColor</span><span class="p">(</span><span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">count</span><span class="p">),</span>
+<span class="w">              </span><span class="nx">weight</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">opacity</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">dashArray</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">fillOpacity</span><span class="o">:</span><span class="w"> </span><span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;objetivos&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;change&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;objetivos&quot;</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;-----&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;objetivos&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)[</span><span class="mf">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="nx">map</span><span class="p">.</span><span class="nx">setView</span><span class="p">([</span><span class="nx">view</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">view</span><span class="p">[</span><span class="mf">2</span><span class="p">]],</span><span class="w"> </span><span class="nx">view</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w"></span>
-<span class="w">            </span><span class="nx">gridLayer</span><span class="p">.</span><span class="nx">clearLayers</span><span class="p">();</span><span class="w"></span>
-<span class="w">            </span><span class="nx">respMarkers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="nx">item</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
-<span class="w">            </span><span class="nx">est</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">)</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;objetivos&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;change&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;objetivos&quot;</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;-----&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;objetivos&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)[</span><span class="mf">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">map</span><span class="p">.</span><span class="nx">setView</span><span class="p">([</span><span class="nx">view</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">view</span><span class="p">[</span><span class="mf">2</span><span class="p">]],</span><span class="w"> </span><span class="nx">view</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">            </span><span class="nx">gridLayer</span><span class="p">.</span><span class="nx">clearLayers</span><span class="p">();</span>
+<span class="w">            </span><span class="nx">respMarkers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">item</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">            </span><span class="nx">est</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">)</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
 
-<span class="w">        </span><span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">layers</span><span class="p">({</span><span class="w"></span>
-<span class="w">          </span><span class="nx">osm</span><span class="o">:</span><span class="w"> </span><span class="nx">osmLayer</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nx">sat</span><span class="o">:</span><span class="w"> </span><span class="nx">satelite</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="p">{</span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;topleft&#39;</span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">layers</span><span class="p">({</span>
+<span class="w">          </span><span class="nx">osm</span><span class="o">:</span><span class="w"> </span><span class="nx">osmLayer</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">sat</span><span class="o">:</span><span class="w"> </span><span class="nx">satelite</span>
+<span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="p">{</span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;topleft&#39;</span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;avh&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Adrián Vandellos Hita&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;abduction&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;agr&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Albert Gaitan Roca&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;alien&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aad&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alvaro Aibar Delgado&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;anon&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;axv&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Arnau Xerta Velasco&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;avalanche1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cpp&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Carles Puyol i Palacin&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;battlefield&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ccc&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Carles Cuadras Casanovas&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;blast&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;epm&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Eric Padrós Martínez&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bomb&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gvs&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Guillem Viñas Salvador&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;caraccident&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;jfpg&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Javier Francisco Pérez Gómez&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cowabduction&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;jpr&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordi Pallàs del Río&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;crimescene&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;jbl&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordi Barniol Llurda&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;earthquake-3&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mmp&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Manuel Mateo Pallares&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;fire&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mpb&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Martin Pedroso Baena&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;flood&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mnf&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Miguel Novillo Fernandez&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;love_date&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;oc&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Olivier Curdy&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;peace&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pifg&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Patricia Isabel Fernandez Gutierrez&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;phantom&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rcf&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Raúl Cruz Fernández&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pirates&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rbs&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Raúl Bravo Sánchez&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;planecrash&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;xl&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Xinmiao Liang&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;radiation&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Puig Mora, Antoni&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;abduction&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Zaldua Antolinez, Carlos Eduardo&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;alien&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Durà Lahoz, Cristina&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;anon&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;García Zárate, Diego&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;avalanche1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Roselló Boada, Eva&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;battlefield&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bueno Tricas, Gerard&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;blast&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Colàs Bajo, Marta&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bomb&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Morales Rodriguez, Nicole&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;caraccident&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Timoner Alfageme, Paula&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cowabduction&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Enguialle, Pierre&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;crimescene&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Rubí Perales, Pol&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;earthquake-3&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;García Gómez, Rodrigo&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;fire&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;13&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Vintimilla Cruz, Tito Santiago&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;flood&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;14&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Miguel Novillo Fernandez&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;love_date&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Wang, Wenyu&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;peace&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;16&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Lyu, Xinyu&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;phantom&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="p">}</span><span class="cm">/*,</span>
+<span class="cm">          {</span>
+<span class="cm">            id: &quot;17&quot;,</span>
+<span class="cm">            nom: &quot;&quot;,</span>
+<span class="cm">            icon: &quot;pirates&quot;,</span>
+<span class="cm">            score: 0</span>
+<span class="cm">          },</span>
+<span class="cm">          {</span>
+<span class="cm">            id: &quot;18&quot;,</span>
+<span class="cm">            nom: &quot;&quot;,</span>
+<span class="cm">            icon: &quot;planecrash&quot;,</span>
+<span class="cm">            score: 0</span>
+<span class="cm">          },</span>
+<span class="cm">          {</span>
+<span class="cm">            id: &quot;19&quot;,</span>
+<span class="cm">            nom: &quot;&quot;,</span>
+<span class="cm">            icon: &quot;radiation&quot;,</span>
+<span class="cm">            score: 0</span>
+<span class="cm">          }*/</span>
+<span class="w">        </span><span class="p">];</span>
 
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">iconBaseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://betaserver.icgc.cat/mapicons/&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">iconBaseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://betaserver.icgc.cat/mapicons/&quot;</span><span class="p">;</span>
 
-<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">createTable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;alumnos&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">est</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">createTable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;alumnos&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">est</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;div&gt;</span>
 <span class="sb">              &lt;input type=&quot;radio&quot; name=&quot;estudiante&quot; value=&quot;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">&quot;&gt;</span>
 <span class="sb">              &lt;span&gt;&lt;img src=&quot;</span><span class="si">${</span><span class="nx">iconBaseUrl</span><span class="si">}${</span><span class="nx">item</span><span class="p">.</span><span class="nx">icon</span><span class="si">}</span><span class="sb">.png&quot; alt=&quot;&quot;&gt;&lt;/span&gt; </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">nom</span><span class="si">}</span><span class="sb">: </span>
 <span class="sb">              &lt;span&gt;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">distance</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">distance</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">4</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb"> Km`</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">score</span><span class="si">}</span><span class="sb">&lt;/span&gt;</span>
-<span class="sb">            &lt;/div&gt;`</span><span class="p">;</span><span class="w"></span>
-<span class="w">          </span><span class="p">}).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="sb">            &lt;/div&gt;`</span><span class="p">;</span>
+<span class="w">          </span><span class="p">}).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="nx">createTable</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">createTable</span><span class="p">();</span>
 
-<span class="w">        </span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">){</span>
 
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">objetivo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;objetivos&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">objetivo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;objetivos&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">);</span>
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">pt1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">point</span><span class="p">([</span><span class="nx">objetivo</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">objetivo</span><span class="p">[</span><span class="mf">0</span><span class="p">]]);</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">pt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">point</span><span class="p">([</span><span class="nx">evt</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span><span class="w"> </span><span class="nx">evt</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lat</span><span class="p">]);</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">units</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;kilometers&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">pt1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">point</span><span class="p">([</span><span class="nx">objetivo</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">objetivo</span><span class="p">[</span><span class="mf">0</span><span class="p">]]);</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">pt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">point</span><span class="p">([</span><span class="nx">evt</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span><span class="w"> </span><span class="nx">evt</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lat</span><span class="p">]);</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">units</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;kilometers&#39;</span><span class="p">};</span>
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">distance</span><span class="p">(</span><span class="nx">pt1</span><span class="p">,</span><span class="w"> </span><span class="nx">pt2</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">distance</span><span class="p">(</span><span class="nx">pt1</span><span class="p">,</span><span class="w"> </span><span class="nx">pt2</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">activeEstId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;estudiante&quot;]:checked&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">activeEstId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;estudiante&quot;]:checked&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">activeEst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">est</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">activeEstId</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">activeEst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">est</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">activeEstId</span><span class="p">;</span>
+<span class="w">            </span><span class="p">});</span>
 
-<span class="w">            </span><span class="nx">activeEst</span><span class="p">.</span><span class="nx">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">distance</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="nx">activeEst</span><span class="p">.</span><span class="nx">latlng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">evt</span><span class="p">.</span><span class="nx">latlng</span><span class="w"></span>
+<span class="w">            </span><span class="nx">activeEst</span><span class="p">.</span><span class="nx">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">distance</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">activeEst</span><span class="p">.</span><span class="nx">latlng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">evt</span><span class="p">.</span><span class="nx">latlng</span>
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">activeEst</span><span class="p">.</span><span class="nx">latlng</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="nx">crearIcono</span><span class="p">(</span><span class="nx">activeEst</span><span class="p">.</span><span class="nx">icon</span><span class="p">)}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">activeEst</span><span class="p">.</span><span class="nx">latlng</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="nx">crearIcono</span><span class="p">(</span><span class="nx">activeEst</span><span class="p">.</span><span class="nx">icon</span><span class="p">)}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 
-<span class="w">            </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="nx">marker</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span><span class="w"></span>
-<span class="w">            </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">marker</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span>
+<span class="w">            </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
 
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span>
 
-<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">crearIcono</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span><span class="w"></span>
-<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">icon</span><span class="p">({</span><span class="w"></span>
-<span class="w">              </span><span class="nx">iconUrl</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">iconBaseUrl</span><span class="si">}${</span><span class="nx">id</span><span class="si">}</span><span class="sb">.png`</span><span class="p">,</span><span class="w"></span>
-<span class="w">              </span><span class="nx">iconSize</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">37</span><span class="p">,</span><span class="w"> </span><span class="mf">37</span><span class="p">],</span><span class="w"></span>
-<span class="w">          </span><span class="p">});</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">crearIcono</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">icon</span><span class="p">({</span>
+<span class="w">              </span><span class="nx">iconUrl</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">iconBaseUrl</span><span class="si">}${</span><span class="nx">id</span><span class="si">}</span><span class="sb">.png`</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">iconSize</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">37</span><span class="p">,</span><span class="w"> </span><span class="mf">37</span><span class="p">],</span>
+<span class="w">          </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">respMarkers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">respMarkers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
 
-<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">mostrarResultados</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">est</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">a</span><span class="p">.</span><span class="nx">distance</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">b</span><span class="p">.</span><span class="nx">distance</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">distance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">distance</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
-<span class="w">            </span><span class="nx">createTable</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">mostrarResultados</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">est</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">a</span><span class="p">.</span><span class="nx">distance</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">b</span><span class="p">.</span><span class="nx">distance</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span>
+<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">distance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">distance</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">            </span><span class="nx">createTable</span><span class="p">();</span>
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">respuestas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">              </span><span class="nx">features</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">respuestas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">features</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">            </span><span class="p">}</span>
 
-<span class="w">            </span><span class="nx">est</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">mark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="nx">crearIcono</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">icon</span><span class="p">)}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="nx">respuestas</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"></span>
-<span class="w">                  </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                  </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Point&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="s2">&quot;coordinates&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lat</span><span class="p">]</span><span class="w"></span>
-<span class="w">                  </span><span class="p">}</span><span class="w"></span>
-<span class="w">                </span><span class="p">});</span><span class="w"></span>
-<span class="w">                </span><span class="nx">respMarkers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">mark</span><span class="p">);</span><span class="w"></span>
-<span class="w">              </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
+<span class="w">            </span><span class="nx">est</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">mark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="nx">crearIcono</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">icon</span><span class="p">)}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">respuestas</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<span class="w">                  </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Point&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;coordinates&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lng</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lat</span><span class="p">]</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">                </span><span class="nx">respMarkers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">mark</span><span class="p">);</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">});</span>
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">objetivo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;objetivos&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="nx">map</span><span class="p">.</span><span class="nx">setView</span><span class="p">(</span><span class="nx">objetivo</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">mark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">objetivo</span><span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="nx">respMarkers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">mark</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">objetivo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;objetivos&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">map</span><span class="p">.</span><span class="nx">setView</span><span class="p">(</span><span class="nx">objetivo</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">mark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">objetivo</span><span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">respMarkers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">mark</span><span class="p">);</span>
 
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">bboxpol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">bboxPolygon</span><span class="p">(</span><span class="nx">turf</span><span class="p">.</span><span class="nx">bbox</span><span class="p">(</span><span class="nx">respuestas</span><span class="p">))</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">respArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">transformScale</span><span class="p">(</span><span class="nx">bboxpol</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">bbox</span><span class="p">(</span><span class="nx">respArea</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">hexgrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">hexGrid</span><span class="p">(</span><span class="nx">bbox</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">bboxpol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">bboxPolygon</span><span class="p">(</span><span class="nx">turf</span><span class="p">.</span><span class="nx">bbox</span><span class="p">(</span><span class="nx">respuestas</span><span class="p">))</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">respArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">transformScale</span><span class="p">(</span><span class="nx">bboxpol</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">bbox</span><span class="p">(</span><span class="nx">respArea</span><span class="p">);</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">hexgrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">hexGrid</span><span class="p">(</span><span class="nx">bbox</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
 
-<span class="w">            </span><span class="nx">turf</span><span class="p">.</span><span class="nx">featureEach</span><span class="p">(</span><span class="nx">hexgrid</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">currentFeature</span><span class="p">,</span><span class="w"> </span><span class="nx">featureIndex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="kd">const</span><span class="w"> </span><span class="nx">ptsWithin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">pointsWithinPolygon</span><span class="p">(</span><span class="nx">respuestas</span><span class="p">,</span><span class="w"> </span><span class="nx">currentFeature</span><span class="p">);</span><span class="w"></span>
-<span class="w">              </span><span class="nx">currentFeature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ptsWithin</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
+<span class="w">            </span><span class="nx">turf</span><span class="p">.</span><span class="nx">featureEach</span><span class="p">(</span><span class="nx">hexgrid</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">currentFeature</span><span class="p">,</span><span class="w"> </span><span class="nx">featureIndex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="kd">const</span><span class="w"> </span><span class="nx">ptsWithin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">turf</span><span class="p">.</span><span class="nx">pointsWithinPolygon</span><span class="p">(</span><span class="nx">respuestas</span><span class="p">,</span><span class="w"> </span><span class="nx">currentFeature</span><span class="p">);</span>
+<span class="w">              </span><span class="nx">currentFeature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ptsWithin</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="w">            </span><span class="p">});</span>
 
-<span class="w">            </span><span class="nx">gridLayer</span><span class="p">.</span><span class="nx">addData</span><span class="p">(</span><span class="nx">hexgrid</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="nx">gridLayer</span><span class="p">.</span><span class="nx">addData</span><span class="p">(</span><span class="nx">hexgrid</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;resultados&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">mostrarResultados</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;resultados&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">mostrarResultados</span><span class="p">);</span>
 
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
@@ -746,42 +783,6 @@
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Pie" >
-      
-        
-        <a href="../leaflet/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Leaflet" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Anterior
-              </span>
-              Leaflet
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../maplibre/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: MapLibre GL JS (Mapbox GL)" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Siguiente
-              </span>
-              MapLibre GL JS (Mapbox GL)
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -803,10 +804,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
     
   </body>
