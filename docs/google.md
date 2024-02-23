@@ -12,10 +12,14 @@ La referencia de la API la podemos ver en https://developers.google.com/maps/doc
 Si tenemos uan API KEY podemos cargar la libreria en nuestro html de la siguiente forma:
 
 ``` html
-<html>
-  <head>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=[YOUR_API_KEY]"></script>
-    .....
+<script>
+  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+    key: "YOUR_API_KEY",
+    v: "weekly",
+    // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+    // Add other bootstrap parameters as needed, using camel case.
+  });
+</script>
 ```
 
 Los ejemplos de la API los podemos ver en https://developers.google.com/maps/documentation/javascript/examples?hl=es
@@ -27,15 +31,16 @@ Abriremos el ejemplo de Simple map https://developers.google.com/maps/documentat
 ``` js
 let map;
 
-function initMap() {
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
 
 	const mapOptions = {
-    center: new google.maps.LatLng(42,2),
+    center: { lat: 42, lng: 2 }, // o new google.maps.LatLng(42,2),
     zoom:9,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: 'satellite' //o  google.maps.MapTypeId.SATELLITE
   };
 
-  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  map = new Map(document.getElementById("map"), mapOptions);
 
 }
 ```
@@ -76,20 +81,6 @@ No puedes acceder ni modificar estos controles del mapa directamente, pero puede
 
 ### Opciones de los controles
 
-#### Control de zoom
-
-El **control de zoom** puede mostrarse en una de las siguientes opciones style:
-
-* google.maps.ZoomControlStyle.SMALL muestra un control de zoom mini que solo dispone de los botones + y -. Este estilo es adecuado para mapas pequeños. En los dispositivos táctiles, este control se aparece como botones + y - que responden a los eventos de toque.
-* google.maps.ZoomControlStyle.LARGE muestra el control deslizante de zoom estándar. En los dispositivos táctiles, este control se aparece como botones + y - que responden a los eventos de toque.
-* google.maps.ZoomControlStyle.DEFAULT escoge un control de zoom apropiado en función del tamaño del mapa y del dispositivo en el que se esté utilizando.
-
-``` js
-zoomControlOptions: {
-    style: google.maps.ZoomControlStyle.SMALL
-}
-```
-
 #### Control MapType
 
 El **control MapType** puede mostrarse en una de las siguientes opciones style:
@@ -120,42 +111,38 @@ Google Maps API incorpora varios tipos de superposiciones
 Los puntos en el mapa se muestran mediante marcadores. En algunas ocasiones, los marcadores pueden mostrar imágenes de iconos personalizados, que se denominan normalmente "iconos". Los marcadores e iconos son objetos de tipo Marker.
 
 ``` js
+const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
 const myLatLng = { lat: 42, lng: 2};
-const marker = new google.maps.Marker({
+const marker = new AdvancedMarkerElement({
     position: myLatlng,
     map:map,
     title:"Hello World!"
 });
 ```
 
-Ejemplo: https://developers.google.com/maps/documentation/javascript/examples/marker-simple?hl=es
+Ejemplo: https://developers.google.com/maps/documentation/javascript/examples/advanced-markers-simple?hl=es
 
 #### Marcadores personalizados
 
 ``` js
-new google.maps.Marker({
+const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+// A marker with a with a URL pointing to a PNG.
+const customImg = document.createElement("img");
+
+customImg.src = 'http://betaserver.icgc.cat/mapicons/aed-2.png'
+
+new AdvancedMarkerElement({
     position: map.getCenter(),
-    icon: 'http://betaserver.icgc.cat/mapicons/aed-2.png',
-    map: map,
+    content: customImg,
+    map,
   });
 ```
 
-Ejemplo: https://developers.google.com/maps/documentation/javascript/examples/marker-symbol-custom?hl=es
+Ejemplo: https://developers.google.com/maps/documentation/javascript/examples/advanced-markers-basic-style?hl=es
 
-Podéis encontrar más íconos de ejemplo en http://betaserver.icgc.cat/mapicons/
-
-Otro ejemplo con un marker personalizado y un punto de anclaje para que el icono esté centrado en la posición del punto del marcador.
-
-``` js
- new google.maps.Marker({
-    position: map.getCenter(),
-    icon: {
-    	url:'https://betaserver2.icgc.cat/maki/pin-l-f+ceff00@2x.png',
-    	anchor: new google.maps.Point(0, 90)
-    },
-    map: map,
-  });
-```
+Podéis encontrar más íconos de ejemplo en http://betaserver.icgc.cat/mapicons/ o en https://betaserver2.icgc.cat/maki/pin-l-f+ceff00@2x.png
 
 ### Líneas
 
