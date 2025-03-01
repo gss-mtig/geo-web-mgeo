@@ -2,37 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://gss-mtig.github.io/geo-web-mgeo/</loc>
-         <lastmod>2024-02-23</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-01</lastmod>
     </url>
     <url>
          <loc>https://gss-mtig.github.io/geo-web-mgeo/arcgis/</loc>
-         <lastmod>2024-02-23</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-01</lastmod>
     </url>
     <url>
          <loc>https://gss-mtig.github.io/geo-web-mgeo/google/</loc>
-         <lastmod>2024-02-23</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-01</lastmod>
     </url>
     <url>
          <loc>https://gss-mtig.github.io/geo-web-mgeo/leaflet/</loc>
-         <lastmod>2024-02-23</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-01</lastmod>
     </url>
     <url>
          <loc>https://gss-mtig.github.io/geo-web-mgeo/maplibre/</loc>
-         <lastmod>2024-02-23</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-01</lastmod>
     </url>
     <url>
          <loc>https://gss-mtig.github.io/geo-web-mgeo/openLayers/</loc>
-         <lastmod>2024-02-23</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-01</lastmod>
     </url>
     <url>
          <loc>https://gss-mtig.github.io/geo-web-mgeo/turf/</loc>
-         <lastmod>2024-02-23</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-01</lastmod>
     </url>
 </urlset>
