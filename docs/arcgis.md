@@ -24,7 +24,7 @@ Crear un archivo llamado arcgis.html y copiar lo siguiente:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/{{ versions.arcgis }}/esri/themes/light/main.css">
     <style>
         html,
         body,
@@ -36,7 +36,7 @@ Crear un archivo llamado arcgis.html y copiar lo siguiente:
         }
     </style>
     
-    <script src="https://js.arcgis.com/4.28/"></script>
+    <script src="https://js.arcgis.com/{{ versions.arcgis }}/"></script>
     <script>
         require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
 

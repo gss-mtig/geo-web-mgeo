@@ -10,8 +10,8 @@ theme:
     - content.code.copy
 
 markdown_extensions:
-  - codehilite:
-      linenums: True
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
   - admonition
   - pymdownx.magiclink
   - pymdownx.superfences
@@ -28,4 +28,20 @@ nav:
 - MapLibre GL JS (Mapbox GL): maplibre.md
 
 plugins:
-    - search
+  - search
+  - macros
+
+extra:
+  versions:
+    arcgis: 4.32
+    openlayers: 10.4.0
+    leaflet: 1.9.4
+    leaflet_hash: 0.2.1
+    leaflet_ajax: 2.1.0
+    leaflet_easybutton: 2
+    leaflet_draw: 1.0.4
+    leaflet_sidebar_v2: 0.4.0
+    turf: 7
+    bootstrap_icons: 1.11.3
+
+

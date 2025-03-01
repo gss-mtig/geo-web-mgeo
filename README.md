@@ -6,7 +6,21 @@
 
 ## Entorno
 
-Se puede crear un entorno para generar la documentación instalando [Anaconda](https://www.anaconda.com/)
+Se puede crear un entorno para generar la documentación instalando [venv](https://docs.python.org/3/library/venv.html#)
+
+Para crear el *enviroment* abrir la consola y escribir
+
+```bash
+python3 -m venv mkdocs
+```
+
+Para activar el nuevo *enviroment* escribir
+
+```bash
+source mkdocs/bin/activate
+```
+
+También se puede crear un entorno para generar la documentación instalando [Anaconda](https://www.anaconda.com/)
 
 Una vez instalado el Anaconda crear un *enviroment* donde instalar el mkdocs
 
@@ -34,6 +48,7 @@ E instalar con el comando:
 
 ```bash
 pip install mkdocs-material
+pip install mkdocs-macros-plugin
 ```
 
 ### Comandos mkdocs

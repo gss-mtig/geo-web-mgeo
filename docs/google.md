@@ -288,6 +288,8 @@ Ejemplo: https://developers.google.com/maps/documentation/javascript/examples/di
 
 Podéis ver más ejemplos de código en https://developers.google.com/maps/documentation/javascript/examples/
 
+### Ejercicio entregable
+
 !!! question "Ejercicio 2 pts"
     1. Crear un mapa con la API de google maps. Iniciar el mapa centrado en Catalunya **(0.5 pt)**
     2. El mapa debe tener el fondo Hibrido activado por defecto **(0.5 pt)**

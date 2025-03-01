@@ -12,14 +12,14 @@ Crear un archivo llamado openlayers.html y copiar lo siguiente:
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@8.2.0/ol.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@{{ versions.openlayers }}/ol.min.css" type="text/css">
     <style>
       .map {
         height: 600px;
         width: 100%;
       }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/ol@8.2.0/dist/ol.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@{{ versions.openlayers }}/dist/ol.min.js"></script>
     <title>Ejemplo OpenLayers</title>
   </head>
   <body>

@@ -14,11 +14,11 @@ Ejemplo
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@turf/turf@6/turf.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/{{ versions.leaflet_hash }}/leaflet-hash.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@turf/turf@{{ versions.turf }}/turf.min.js" crossorigin="anonymous"></script>
    
     <style>
         body {
@@ -160,100 +160,100 @@ Ejemplo
         const est = [
           {
             id: "1",
-            nom: "Puig Mora, Antoni",
+            nom: "Inna Arroyo Kochachi",
             icon: "abduction",
             score: 0
           },
           {
             id: "2",
-            nom: "Zaldua Antolinez, Carlos Eduardo",
+            nom: "Maria Ayelen Calvet",
             icon: "alien",
             score: 0
           },
           {
             id: "3",
-            nom: "Durà Lahoz, Cristina",
+            nom: "Marina Casero Garcia",
             icon: "anon",
             score: 0
           },
           {
             id: "4",
-            nom: "García Zárate, Diego",
+            nom: "Sandra X. De Fex Sierra",
             icon: "avalanche1",
             score: 0
           },
           {
             id: "5",
-            nom: "Roselló Boada, Eva",
+            nom: "Alejandro García Menéndez",
             icon: "battlefield",
             score: 0
           },
           {
             id: "6",
-            nom: "Bueno Tricas, Gerard",
+            nom: "Carmen Garrido Antolino",
             icon: "blast",
             score: 0
           },
           {
             id: "7",
-            nom: "Colàs Bajo, Marta",
+            nom: "Joan Molina Navas",
             icon: "bomb",
             score: 0
           },
           {
             id: "8",
-            nom: "Morales Rodriguez, Nicole",
+            nom: "Genís Rulló Capdevila",
             icon: "caraccident",
             score: 0
-          },
+          }/*,
           {
             id: "9",
-            nom: "Timoner Alfageme, Paula",
+            nom: "",
             icon: "cowabduction",
             score: 0
           },
           {
             id: "10",
-            nom: "Enguialle, Pierre",
+            nom: "",
             icon: "crimescene",
             score: 0
           },
           {
             id: "11",
-            nom: "Rubí Perales, Pol",
+            nom: "",
             icon: "earthquake-3",
             score: 0
           },
           {
             id: "12",
-            nom: "García Gómez, Rodrigo",
+            nom: "",
             icon: "fire",
             score: 0
           },
           {
             id: "13",
-            nom: "Vintimilla Cruz, Tito Santiago",
+            nom: "",
             icon: "flood",
             score: 0
           },
           {
             id: "14",
-            nom: "Miguel Novillo Fernandez",
+            nom: "",
             icon: "love_date",
             score: 0
           },
           {
             id: "15",
-            nom: "Wang, Wenyu",
+            nom: "",
             icon: "peace",
             score: 0
           },
           {
             id: "16",
-            nom: "Lyu, Xinyu",
+            nom: "",
             icon: "phantom",
             score: 0
-          }/*,
+          },
           {
             id: "17",
             nom: "",

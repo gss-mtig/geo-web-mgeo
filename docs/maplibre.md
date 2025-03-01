@@ -32,18 +32,83 @@ Debido al cambio de licencia parte de la comunidad lanza **MapLibre GL JS** [^2]
     <script>
         const map = new maplibregl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',                
+            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard_general.json',                
             center: [2.16859, 41.3954],
             zoom: 13,
             maxZoom: 14,
             hash: true,
             pitch: 45
         });
-
     </script>
 </body>
 </html>
 ```
+
+## Agregar capas y fuentes
+
+### Sources (fuentes)
+
+Ya vimos como agregar fuentes de datos en el estilo pero también podemos agregar fuentes de datos al mapa luego de cargar el estilo inicial del mapa.
+
+Para agregar una fuete al mapa se usa el método **addSource**. 
+
+Sintaxis
+
+``` js
+map.addSource("ID_DE_LA_FUENTE", opciones);
+```
+
+Ejemplo
+
+``` js
+map.addSource('muncat', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG4326.geojson'
+});
+```
+
+!!! note
+    Si el mapa tiene un estilo ya cargado las fuentes y las capas se deben cargar luego del el evento load del mapa que solo se llama la primera vez que se carga el mapa
+    ``` js
+    map.on('load', function() {
+        // the rest of the code will go in here
+        map.addSource('muncat', {
+            type: 'geojson',
+            data: 'https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG4326.geojson'
+        });
+    });
+    ```
+
+### Layers (capas)
+
+Al igual que las fuentes de datos podemos agregar capas al mapa una vez cargado el estilo inicial del mapa. Para ellos usaremos el método **addLayer**
+
+Sintaxis
+
+``` js
+map.addLayer(opciones);
+```
+
+Ejemplo
+
+``` js
+map.addLayer({
+    'id': 'municipis',
+    'type': 'fill',
+    'source': 'muncat',
+    'paint': {
+        'fill-color': '#888888',
+        'fill-opacity': 0.4
+    },
+    'filter': ['==', '$type', 'Polygon']
+});
+```
+
+Las capas tienen dos subpropiedades que determinan cómo se procesan los datos de esa capa: propiedades de diseño y pintura.
+
+*Layout properties*: Las propiedades de diseño aparecen en el objeto "layout" de la capa. Definen la estructura y organización de los elements en el mapa, como su visibilidad o la ubicación de etiquetas. Se aplican al principio del proceso de renderizado y definen cómo se pasan los datos de esa capa a la GPU. Los cambios en una propiedad de diseño requieren un paso de "diseño" asincrónico.
+
+*Paint properties*: Las propiedades de pintura aparecen en el objeto "paint" de la capa. Controlan la apariencia visual de los elementos en el mapa, como colores, opacidad y tamaños. Las propiedades de la pintura se aplican más adelante en el proceso de renderizado. Los cambios en una propiedad de pintura son baratos y ocurren de forma sincrónica.
 
 ## Estilo
 
@@ -100,7 +165,7 @@ Objeto que define los orígenes de los datos.
 
 Una fuente (**source**) indica qué datos debe mostrar el mapa. Se debe especifique el tipo de fuente con la propiedad "type". Lo tipos de fuentes deben ser: vector, raster, raster-dem, geojson, image, video.
 
-https://maplibre.org/maplibre-gl-js-docs/style-spec/sources/
+https://maplibre.org/maplibre-style-spec/sources/
 
 Ejemplo 
 
@@ -108,7 +173,7 @@ Ejemplo
 "sources": {
     "openmaptiles": {
       "type": "vector",
-      "tiles": ["https://geoserveis.icgc.cat/data/planet/{z}/{x}/{y}.pbf"]
+      "tiles": ["https://geoserveis.icgc.cat/servei/catalunya/contextmaps_v1/vt/{z}/{x}/{y}.pbf"]
     },
     "ortoICGC": {
       "type": "raster",
@@ -116,6 +181,7 @@ Ejemplo
         "https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg"
       ],
       "tileSize": 256,
+      "attribution": "<b>Ortofoto Catalunya</b>:<a href=\"https://www.icgc.cat/Aplicacions/Visors/ContextMaps\">Institut Cartogràfic i Geològic de Catalunya</a> |",
       "minzoom": 13.1,
       "maxzoom": 20
     }
@@ -126,7 +192,7 @@ Ejemplo
 
 Matriz que contiene las reglas de simbolización. El orden dentro de la matriz es importante ya que la forma en que se van dibujando, hace que la primera regla quede por debajo del todo y la última regla quede por encima del todo. De esta manera, la primera regla suele ser el color de fondo del mapa, y las últimas suelen ser la toponimia o los PoIs. El tipo de capa se especifica mediante la propiedad "type" y debe ser de fbackground, fill, line, symbol, raster, circle, fill-extrusion, heatmap, hillshade, sky.
 
-https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/
+https://maplibre.org/maplibre-style-spec/layers/
 
 Ejemplo
 
@@ -212,70 +278,6 @@ Habitualmente también se usan otras propiedades para indicar la vista inicial d
 }
 ```
 
-## Sources
-
-Ya vimos como agregar fuentes de datos en el estilo pero también podemos agregar fuentes de datos al mapa luego de cargar el estilo inicial del mapa.
-
-Para agregar un estilo al mapa se usa el método **addSource**. 
-
-Sintaxis
-
-``` js
-map.addSource("ID_DE_LA_FUENTE", opciones);
-```
-
-Ejemplo
-
-``` js
-map.addSource('muncat', {
-    type: 'geojson',
-    data: 'https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG4326.geojson'
-});
-```
-
-!!! note
-    Si el mapa tiene un estilo ya cargado las fuentes y las capas se deben cargar luego del el evento load del mapa que solo se llama la primera vez que se carga el mapa
-    ``` js
-    map.on('load', function() {
-        // the rest of the code will go in here
-        map.addSource('muncat', {
-            type: 'geojson',
-            data: 'https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG4326.geojson'
-        });
-    });
-    ```
-
-## Layers
-
-Al igual que las fuentes de datos podemos agregar capas al mapa una vez cargado el estilo inicial del mapa. Para ellos usaremos el método **addLayer**
-
-Sintaxis
-
-``` js
-map.addLayer(opciones);
-```
-
-Ejemplo
-
-``` js
-map.addLayer({
-    'id': 'municipis',
-    'type': 'fill',
-    'source': 'muncat',
-    'paint': {
-    'fill-color': '#888888',
-    'fill-opacity': 0.4
-    },
-    'filter': ['==', '$type', 'Polygon']
-});
-```
-
-Las capas tienen dos subpropiedades que determinan cómo se procesan los datos de esa capa: propiedades de diseño y pintura.
-
-*Layout properties*: Las propiedades de diseño aparecen en el objeto "layout" de la capa. Se aplican al principio del proceso de renderizado y definen cómo se pasan los datos de esa capa a la GPU. Los cambios en una propiedad de diseño requieren un paso de "diseño" asincrónico.
-
-*Paint properties*: Las propiedades de la pintura se aplican más adelante en el proceso de renderizado. Las propiedades de pintura aparecen en el objeto "paint" de la capa. Los cambios en una propiedad de pintura son baratos y ocurren de forma sincrónica.
-
 ## Temáticos
 
 Se puede definir el valor de cualquier propiedad de diseño, propiedad de pintura o filtro como una expresión.
@@ -296,7 +298,7 @@ Las expresiones se representan como matrices JSON. El primer elemento de una mat
 [expression_name, argument_0, argument_1, ...]
 ```
 
-https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/
+https://maplibre.org/maplibre-style-spec/expressions/
 
 Ejemplo
 
@@ -405,15 +407,15 @@ map.setLayoutProperty('my-layer', 'visibility', 'none');
 function cambiaColorAgua(evt) {
     const color = evt.target.value;
     console.log(color);
-    map.setPaintProperty('water-copy', 'fill-color', color);
+    map.setPaintProperty('water-ocean', 'fill-color', color);
 }
 
 function muestraEdificios(evt) {
     const isChecked = evt.target.checked;
     if(isChecked){
-        map.setLayoutProperty('building-copy', 'visibility', 'visible');
+        map.setLayoutProperty('building-residential', 'visibility', 'visible');
     }else{
-        map.setLayoutProperty('building-copy', 'visibility', 'none');
+        map.setLayoutProperty('building-residential', 'visibility', 'none');
     }
 }
 
@@ -449,9 +451,9 @@ Ejemplo
 
 
 <div id='menu'>
-    <input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'>
+    <input id='icgc' type='radio' name='rtoggle' value='icgc_mapa_estandard_general' checked='checked'>
     <label for='icgc'>icgc</label>
-    <input id='fulldark' type='radio' name='rtoggle' value='fulldark'>
+    <input id='fulldark' type='radio' name='rtoggle' value='icgc_mapa_base_fosc'>
     <label for='fulldark'>fulldark</label>
 </div>
 ```
@@ -472,6 +474,7 @@ function switchLayer(layer) {
 Ahora si cambiamos de estilo vemos que hemos perdido la capa de los municipios. Para evitar esto podemos usar el evento **styledata** (que se lanzaz cuando el estilo del mapa se carga o cambia) en lugar del evento *load*. Debido a que la carga del estilo es asyncrona debemos esperar a que el estilo del mapa esté cargado por completo (*map.isStyleLoaded()*) para luego cargar nuestras capas.
 
 ``` js
+/*
 map.on('styledata', () => {
     const waiting = () => {
         if (!map.isStyleLoaded()) {
@@ -482,17 +485,29 @@ map.on('styledata', () => {
     };
     waiting();
 });
+*/
+
+function switchLayer(layer) {
+    map.once('styledata', () => {
+        cargarDatos();
+    });
+    map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layer + '.json');
+}
 
 function cargarDatos() {
 
     //comprobamos que el source no existe para evitar cargar un mismo source 2 veces que da un mensaje de error
     if (!map.getSource('muncat')) {
-
         map.addSource('muncat', {
             type: 'geojson',
             data: 'https://raw.githubusercontent.com/geostarters/dades/master/Municipis_Catalunya_EPSG4326.geojson'
         });
-
+    }else {
+        const geojsonData = map.getSource('muncat')._data; // Guardar los datos actuales
+        map.addSource('muncat', {
+            type: 'geojson',
+            data: geojsonData
+        });
     }
 
     //la misma comprobación para las capas
@@ -524,7 +539,6 @@ function cargarDatos() {
             ]
         });
     }
-
 }
 ```
 
@@ -660,6 +674,8 @@ map.on('mouseleave', 'municipis', function () {
 !!! question "Ejercicio 2.5 pts"
     1. Preparar un mapa interactivo de coropletas. Replicar el resultado final de este tutorial de Leaflet https://leafletjs.com/examples/choropleth/ pero usando MapLibre. **(2.5 pt)**
 
+    Tip: mirar este ejemplo: https://maplibre.org/maplibre-gl-js/docs/examples/hover-styles/
+
 
 ## Más recursos
 
@@ -669,7 +685,7 @@ Tutorial más completo: https://geoinquiets.github.io/taller-vt/
 
 ## Referencias
 
-[^1]: https://maplibre.org/maplibre-gl-js-docs/api/
-[^2]: https://maplibre.org/maplibre-gl-js-docs/api/
-[^3]: https://maplibre.org/maplibre-gl-js-docs/style-spec/
+[^1]: https://maplibre.org/maplibre-gl-js/docs/API/
+[^2]: https://maplibre.org/maplibre-gl-js/docs/API/
+[^3]: https://maplibre.org/maplibre-style-spec/
 [^4]: https://docs.mapbox.com/help/glossary/sprite/
